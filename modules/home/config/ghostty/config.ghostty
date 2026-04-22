@@ -1,3 +1,3 @@
-theme = arcoiris
+theme = GitHub Dark Default
 shell-integration-features = no-cursor,sudo,no-title
 cursor-style = block
