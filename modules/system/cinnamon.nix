@@ -1,8 +1,9 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.xserver.excludePackages = [ pkgs.xterm ];
 
   # Enable the Cinnamon Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
@@ -28,5 +29,8 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
+
+  # disable cinnamon default apps
+  services.cinnamon.apps.enable = false;
 }
