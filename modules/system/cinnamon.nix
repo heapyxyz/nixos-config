@@ -1,6 +1,20 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
+  nixpkgs.overlays = [
+    (final: prev: {
+      cinnamon = pkgs-unstable.cinnamon;
+      cinnamon-common = pkgs-unstable.cinnamon-common;
+      cinnamon-session = pkgs-unstable.cinnamon-session;
+      cinnamon-settings-daemon = pkgs-unstable.cinnamon-settings-daemon;
+      cinnamon-control-center = pkgs-unstable.cinnamon-control-center;
+      cinnamon-desktop = pkgs-unstable.cinnamon-desktop;
+      cinnamon-menus = pkgs-unstable.cinnamon-menus;
+      cinnamon-screensaver = pkgs-unstable.cinnamon-screensaver;
+      nemo = pkgs-unstable.nemo;
+    })
+  ];
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.excludePackages = [ pkgs.xterm ];

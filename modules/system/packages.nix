@@ -7,6 +7,7 @@
   environment.systemPackages =
     with pkgs;
     [
+      apple-cursor
       brave
       btop
       fastfetch
