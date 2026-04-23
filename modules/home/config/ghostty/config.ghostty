@@ -2,3 +2,5 @@ theme = GitHub Dark Default
 shell-integration-features = no-cursor,sudo,no-title
 cursor-style = bar
 cursor-color = cell-foreground
+window-width = 100
+window-height = 30
