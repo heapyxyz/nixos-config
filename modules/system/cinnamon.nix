@@ -13,9 +13,11 @@ with lib.gvariant;
 
   # lightdm customization
   services.xserver.displayManager.lightdm.greeters.gtk = {
-    theme.name = "Mint-Y-Dark-Orange";
-    iconTheme.name = "Mint-Y-Yaru";
-    cursorTheme.name = "macOS";
+    cursorTheme = {
+      package = pkgs.apple-cursor;
+      name = "macOS";
+      size = 24;
+    };
   };
 
   # Enable CUPS to print documents.
@@ -67,12 +69,6 @@ with lib.gvariant;
               "panel1:right:9:power@cinnamon.org:12"
               "panel1:right:10:calendar@cinnamon.org:13"
               "panel1:right:11:cornerbar@cinnamon.org:14"
-            ];
-            favorite-apps = [
-              "firefox.desktop"
-              "cinnamon-settings.desktop"
-              "org.gnome.Terminal.desktop"
-              "nemo.desktop"
             ];
             next-applet-id = mkInt32 15;
             panel-edit-mode = false;
