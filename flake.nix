@@ -2,9 +2,9 @@
   description = "NixOS config flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
 
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -16,13 +16,13 @@
     {
       self,
       nixpkgs,
-      nixpkgs-unstable,
+      nixpkgs-stable,
       ...
     }@inputs:
     let
       flake-dir = "/etc/nixos";
       system = "x86_64-linux";
-      pkgs-unstable = import nixpkgs-unstable {
+      pkgs-stable = import nixpkgs-stable {
         inherit system;
         config.allowUnfree = true;
       };
@@ -30,7 +30,7 @@
     {
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs flake-dir pkgs-unstable; };
+          specialArgs = { inherit inputs flake-dir pkgs-stable; };
           modules = [
             ./configuration.nix
             inputs.home-manager.nixosModules.default

@@ -1,20 +1,6 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, ... }:
 
 {
-  nixpkgs.overlays = [
-    (final: prev: {
-      cinnamon = pkgs-unstable.cinnamon;
-      cinnamon-common = pkgs-unstable.cinnamon-common;
-      cinnamon-session = pkgs-unstable.cinnamon-session;
-      cinnamon-settings-daemon = pkgs-unstable.cinnamon-settings-daemon;
-      cinnamon-control-center = pkgs-unstable.cinnamon-control-center;
-      cinnamon-desktop = pkgs-unstable.cinnamon-desktop;
-      cinnamon-menus = pkgs-unstable.cinnamon-menus;
-      cinnamon-screensaver = pkgs-unstable.cinnamon-screensaver;
-      nemo = pkgs-unstable.nemo;
-    })
-  ];
-
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.excludePackages = [ pkgs.xterm ];
@@ -22,6 +8,13 @@
   # Enable the Cinnamon Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.cinnamon.enable = true;
+
+  # lightdm customization
+  services.xserver.displayManager.lightdm.greeters.gtk = {
+    theme.name = "Mint-Y-Dark-Orange";
+    iconTheme.name = "Mint-Y-Yaru";
+    cursorTheme.name = "macOS";
+  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
