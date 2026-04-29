@@ -12,7 +12,9 @@ with lib.gvariant;
   services.xserver.desktopManager.cinnamon.enable = true;
 
   # lightdm customization
+  services.xserver.displayManager.lightdm.greeters.slick.enable = false;
   services.xserver.displayManager.lightdm.greeters.gtk = {
+    enable = true;
     cursorTheme = {
       package = pkgs.apple-cursor;
       name = "macOS";
@@ -53,35 +55,38 @@ with lib.gvariant;
       {
         settings = {
           "org/cinnamon" = {
+            alttab-switcher-delay = mkInt32 100;
             enabled-applets = [
-              "panel1:left:0:menu@cinnamon.org:0"
-              "panel1:left:1:separator@cinnamon.org:1"
-              "panel1:left:2:grouped-window-list@cinnamon.org:2"
-              "panel1:right:0:systray@cinnamon.org:3"
-              "panel1:right:1:xapp-status@cinnamon.org:4"
-              "panel1:right:2:notifications@cinnamon.org:5"
-              "panel1:right:3:printers@cinnamon.org:6"
-              "panel1:right:4:removable-drives@cinnamon.org:7"
-              "panel1:right:5:keyboard@cinnamon.org:8"
-              "panel1:right:7:network@cinnamon.org:9"
-              "panel1:right:8:sound@cinnamon.org:10"
-              "panel1:right:9:power@cinnamon.org:11"
-              "panel1:right:10:calendar@cinnamon.org:12"
-              "panel1:right:11:cornerbar@cinnamon.org:13"
+              "panel1:center:3:grouped-window-list@cinnamon.org:2"
+              "panel1:right:7:systray@cinnamon.org:3"
+              "panel2:right:0:xapp-status@cinnamon.org:4"
+              "panel2:right:1:notifications@cinnamon.org:5"
+              "panel2:right:2:removable-drives@cinnamon.org:7"
+              "panel2:right:7:keyboard@cinnamon.org:8"
+              "panel2:right:5:network@cinnamon.org:10"
+              "panel2:right:6:sound@cinnamon.org:11"
+              "panel2:right:8:power@cinnamon.org:12"
+              "panel2:right:9:calendar@cinnamon.org:13"
+              "panel1:center:2:separator@cinnamon.org:20"
+              "panel1:center:1:Cinnamenu@json:22"
+
             ];
-            next-applet-id = mkInt32 15;
+            next-applet-id = mkInt32 23;
             panel-edit-mode = false;
-            panel-zone-icon-sizes = "[{\"panelId\":1,\"left\":0,\"center\":0,\"right\":24}]";
-            panel-zone-symbolic-icon-sizes = "[{\"panelId\": 1, \"left\": 28, \"center\": 28, \"right\": 16}]";
-            panel-zone-text-sizes = "[{\"panelId\":1,\"left\":0,\"center\":0,\"right\":0}]";
+            panel-zone-icon-sizes = "[{\"panelId\": 1, \"left\": 32, \"center\": 32, \"right\": 32}, {\"left\": 16, \"center\": 16, \"right\": 16, \"panelId\": 2}]";
+            panel-zone-symbolic-icon-sizes = "[{\"panelId\": 1, \"left\": 28, \"center\": 28, \"right\": 16}, {\"left\": 16, \"center\": 16, \"right\": 16, \"panelId\": 2}]";
+            panel-zone-text-sizes = "[{\"panelId\": 1, \"left\": 0, \"center\": 0, \"right\": 0}, {\"left\": 8.5, \"center\": 8.5, \"right\": 8.5, \"panelId\": 2}]";
             panels-autohide = [
-              "1:false"
+              "1:intel"
               "2:false"
             ];
-            panels-enabled = [ "1:0:bottom" ];
+            panels-enabled = [
+              "1:0:bottom"
+              "2:0:top"
+            ];
             panels-height = [
-              "1:48"
-              "2:40"
+              "1:50"
+              "2:28"
             ];
             panels-hide-delay = [
               "1:0"
@@ -97,7 +102,7 @@ with lib.gvariant;
             quit-time-delay = mkInt32 60;
           };
 
-          "org/gnome/desktop/input-sources" = {
+          "org/cinnamon/desktop/input-sources" = {
             sources = [
               (mkTuple [
                 "xkb"
@@ -106,12 +111,21 @@ with lib.gvariant;
             ];
           };
 
+          "org/gnome/desktop/interface" = {
+            monospace-font-name = "JetBrainsMono Nerd Font Medium 10";
+            document-font-name = "Inter Medium 10";
+          };
+
+          "org/nemo/desktop" = {
+            font = "Inter Medium 10";
+          };
+
           "org/cinnamon/desktop/interface" = {
             clock-show-date = true;
             clock-show-seconds = true;
             cursor-size = mkInt32 24;
             cursor-theme = "macOS";
-            font-name = "Ubuntu 10";
+            font-name = "Inter Medium 10";
             gtk-theme = "Mint-Y-Dark-Orange";
             icon-theme = "Mint-Y-Yaru";
             text-scaling-factor = 1.0;
@@ -119,7 +133,7 @@ with lib.gvariant;
           };
 
           "org/cinnamon/desktop/notifications" = {
-            bottom-notifications = true;
+            bottom-notifications = false;
             display-notifications = true;
             notification-duration = mkInt32 4;
           };
@@ -147,6 +161,11 @@ with lib.gvariant;
             event-sounds = false;
           };
 
+          "org/cinnamon/desktop/wm/preferences" = {
+            min-window-opacity = mkInt32 30;
+            titlebar-font = "Inter Bold 10";
+          };
+
           "org/cinnamon/gestures" = {
             enabled = false;
             pinch-percent-threshold = mkUint32 40;
@@ -172,6 +191,8 @@ with lib.gvariant;
           };
 
           "org/cinnamon/muffin" = {
+            draggable-border-width = mkInt32 10;
+            edge-tiling = true;
             tile-maximize = true;
           };
 
@@ -198,8 +219,10 @@ with lib.gvariant;
 
           "org/cinnamon/settings-daemon/plugins/xsettings" = {
             antialiasing = "rgba";
-            buttons-have-icons = false;
+            buttons-have-icons = true;
+            menus-have-icons = true;
             hinting = "slight";
+            rgba-order = "rgba";
           };
 
           "org/cinnamon/theme" = {

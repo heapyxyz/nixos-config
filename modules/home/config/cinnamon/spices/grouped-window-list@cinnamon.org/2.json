@@ -129,7 +129,7 @@
     "type": "checkbox",
     "default": false,
     "description": "Show windows from all workspaces",
-    "value": false
+    "value": true
   },
   "window-display-settings": {
     "type": "combobox",
@@ -139,7 +139,7 @@
       "Only from monitors without a window list": 1,
       "From all monitors": 2
     },
-    "value": 1
+    "value": 2
   },
   "cycleMenusHotkey": {
     "type": "keybinding",
