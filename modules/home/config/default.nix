@@ -4,8 +4,8 @@ let
 in
 {
   xdg.configFile = {
-    "ghostty/config.ghostty" = {
-      source = link "ghostty/config.ghostty";
+    "ghostty" = {
+      source = link "ghostty";
       force = true;
     };
   };
