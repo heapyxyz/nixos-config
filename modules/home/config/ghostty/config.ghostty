@@ -4,3 +4,7 @@ cursor-style = bar
 cursor-color = cell-foreground
 window-width = 100
 window-height = 30
+font-family = JetBrainsMono NF Regular
+font-family-bold = JetBrainsMono NF Bold
+font-family-italic = JetBrainsMono NF Italic
+font-family-bold-italic = JetBrainsMono NF Bold Italic

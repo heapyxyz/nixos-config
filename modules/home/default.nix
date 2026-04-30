@@ -1,5 +1,7 @@
-{ ... }:
-
+{ config, flake-dir, ... }:
+let
+  link = f: config.lib.file.mkOutOfStoreSymlink "${flake-dir}/modules/home/${f}";
+in
 {
   imports = [
     ./config
@@ -15,5 +17,7 @@
     sessionVariables = {
       TERMINAL = "ghostty";
     };
+
+    file.".local/share/backgrounds/background.jpg".source = link "background.jpeg";
   };
 }
