@@ -234,14 +234,14 @@ with lib.gvariant;
             apply-menu-notif = true;
             apply-menu-shell = true;
             auto-bgalpha = false;
-            autofg-bar = true;
+            autofg-bar = false;
             autofg-menu = false;
             autohg-bar = false;
             autohg-menu = false;
             autotheme-dark = "Pastel";
-            autotheme-font = true;
+            autotheme-font = false;
             autotheme-light = "Pastel";
-            autotheme-refresh = true;
+            autotheme-refresh = false;
             balpha = 0.5;
             bartype = "Islands";
             bcolor = [
@@ -268,7 +268,7 @@ with lib.gvariant;
               "0.906"
             ];
             bgpalette = true;
-            bguri = "file:///home/heapy/.local/share/backgrounds/2026-04-30-22-20-02-26-Tahoe-Dark-6K-thumb.jpeg";
+            bguri = "file:///home/heapy/.local/share/backgrounds/background.jpeg";
             border-wmax = false;
             bottom-margin = 0.0;
             boxalpha = 0.0;
@@ -362,7 +362,7 @@ with lib.gvariant;
             ];
             candyalpha = 0.5;
             candybar = true;
-            card-hint = mkUint32 10;
+            card-hint = mkUint32 0;
             color-scheme = "prefer-dark";
             corner-radius = true;
             count1 = mkUint32 324129;
@@ -403,7 +403,7 @@ with lib.gvariant;
               "0.824"
               "0.906"
             ];
-            dark-bguri = "file:///home/heapy/.local/share/backgrounds/2026-04-30-22-20-02-26-Tahoe-Dark-6K-thumb.jpeg";
+            dark-bguri = "file:///home/heapy/.local/share/backgrounds/background.jpeg";
             dark-boxcolor = [
               "0.027"
               "0.047"
@@ -632,7 +632,7 @@ with lib.gvariant;
               "0.655"
             ];
             dbradius = 24.0;
-            default-font = "Sans 12";
+            default-font = "Inter Bold 12";
             disize = 48.0;
             dshadow = false;
             fgalpha = 1.0;
@@ -648,13 +648,13 @@ with lib.gvariant;
             gtk-shadow = "Default";
             gtk-transparency = 1.0;
             halpha = 1.0;
-            hbar-gtk3only = true;
+            hbar-gtk3only = false;
             hcolor = [
               "0.278"
               "0.365"
               "0.655"
             ];
-            headerbar-hint = mkUint32 10;
+            headerbar-hint = mkUint32 0;
             heffect = true;
             height = 42.0;
             hpad = 2.0;
@@ -941,7 +941,7 @@ with lib.gvariant;
               "0.000"
               "0.000"
             ];
-            sidebar-hint = mkUint32 10;
+            sidebar-hint = mkUint32 0;
             smbgcolor = [
               "0.400"
               "0.467"
@@ -951,7 +951,7 @@ with lib.gvariant;
             traffic-light = false;
             trigger-autotheme = false;
             trigger-reload = false;
-            view-hint = mkUint32 10;
+            view-hint = mkUint32 0;
             vpad = 4.0;
             vw-color = [
               "0.278"
@@ -968,7 +968,7 @@ with lib.gvariant;
             ];
             winbradius = 12.0;
             winbwidth = 0.0;
-            window-hint = mkUint32 10;
+            window-hint = mkUint32 0;
             wmax-hbarhint = false;
             wmaxbar = true;
           };
