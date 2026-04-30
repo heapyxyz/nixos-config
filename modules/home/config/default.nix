@@ -8,9 +8,5 @@ in
       source = link "ghostty";
       force = true;
     };
-    "cinnamon" = {
-      source = link "cinnamon";
-      force = true;
-    };
   };
 }

@@ -3,7 +3,7 @@
 {
   imports = [
     ./boot.nix
-    ./cinnamon.nix
+    ./gnome.nix
     ./locale.nix
     ./networking.nix
     ./packages.nix
