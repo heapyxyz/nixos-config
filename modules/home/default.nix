@@ -7,6 +7,8 @@ in
     ./config
   ];
 
+  fonts.fontconfig.enable = true;
+
   home = {
     username = "heapy";
     homeDirectory = "/home/heapy";
@@ -18,6 +20,26 @@ in
       TERMINAL = "ghostty";
     };
 
-    file.".local/share/backgrounds/background.jpg".source = link "background.jpeg";
+    file = {
+      ".local/share/backgrounds" = {
+        source = link "backgrounds";
+        force = true;
+      };
+
+      # https://github.com/vinceliuice/MacTahoe-icon-theme
+      # used icons from the `main` branch because latest release isn't up-to-date
+      ".local/share/icons/MacTahoe" = {
+        source = link "icons/MacTahoe";
+        force = true;
+      };
+      ".local/share/icons/MacTahoe-dark" = {
+        source = link "icons/MacTahoe-dark";
+        force = true;
+      };
+      ".local/share/icons/MacTahoe-dark-bold" = {
+        source = link "icons/MacTahoe-dark-bold";
+        force = true;
+      };
+    };
   };
 }
