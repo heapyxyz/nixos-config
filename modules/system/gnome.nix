@@ -27,7 +27,6 @@ with lib.gvariant;
     gnome-tweaks
 
     gnomeExtensions.appindicator
-    gnomeExtensions.grand-theft-focus
   ];
 
   # dconf generated using dconf2nix
