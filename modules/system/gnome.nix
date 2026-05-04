@@ -85,6 +85,7 @@ with lib.gvariant;
             monospace-font-name = "JetBrainsMono Nerd Font 10";
             scaling-factor = mkUint32 0;
             text-scaling-factor = 1.0;
+            show-battery-percentage = true;
           };
 
           "org/gnome/desktop/peripherals/mouse" = {
@@ -177,6 +178,14 @@ with lib.gvariant;
 
           "org/gnome/tweaks" = {
             show-extensions-notice = false;
+          };
+
+          "org/gnome/shell/keybindings" = {
+            show-screenshot-ui = [ "<Shift><Super>s" ];
+          };
+
+          "org/gnome/desktop/wm/keybindings" = {
+            switch-applications = [ "<Alt>Tab" ];
           };
         };
       }
