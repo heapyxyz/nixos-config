@@ -185,7 +185,7 @@ with lib.gvariant;
           };
 
           "org/gnome/desktop/wm/keybindings" = {
-            switch-applications = [ "<Alt>Tab" ];
+            switch-windows = [ "<Alt>Tab" ];
           };
         };
       }
