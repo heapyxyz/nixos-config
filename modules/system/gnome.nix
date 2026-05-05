@@ -23,6 +23,7 @@ with lib.gvariant;
 
   environment.systemPackages = with pkgs; [
     nautilus
+    gnome-disk-utility
     gnome-extension-manager
     gnome-tweaks
 
