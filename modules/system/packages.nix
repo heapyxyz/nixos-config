@@ -14,6 +14,7 @@
     gh
     ghostty
     nixfmt
+    nodejs_25
     telegram-desktop
     wget
     vscode-fhs
