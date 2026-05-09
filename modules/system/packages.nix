@@ -17,6 +17,7 @@
     nodejs_25
     pnpm
     telegram-desktop
+    steam-run
     wget
     vscode-fhs
   ];
@@ -26,4 +27,17 @@
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
   ];
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports for Source Dedicated Server hosting
+
+    extraPackages = with pkgs; [ apple-cursor ];
+    extraCompatPackages = with pkgs; [
+      proton-ge-bin
+    ];
+  };
+
+  programs.gamemode.enable = true;
 }
