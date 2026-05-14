@@ -8,6 +8,7 @@
     apple-cursor
     brave
     btop
+    docker-compose
     equibop
     fastfetch
     git

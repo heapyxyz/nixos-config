@@ -30,4 +30,6 @@
       default = [ "com.mitchellh.ghostty.desktop" ];
     };
   };
+
+  virtualisation.docker.enable = true;
 }
