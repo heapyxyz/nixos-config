@@ -8,6 +8,7 @@
     apple-cursor
     brave
     btop
+    clang-tools
     docker-compose
     equibop
     fastfetch
