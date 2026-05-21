@@ -19,6 +19,7 @@
     nodejs_25
     pnpm
     telegram-desktop
+    termius
     steam-run
     wget
     vscode-fhs
