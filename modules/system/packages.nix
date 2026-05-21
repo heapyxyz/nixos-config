@@ -45,4 +45,27 @@
   programs.gamemode.enable = true;
 
   services.cloudflare-warp.enable = true;
+
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+
+    shellAliases = {
+      update = "sudo nixos-rebuild switch";
+      cleanup = "sudo nix-collect-garbage -d";
+    };
+
+    ohMyZsh = {
+      enable = true;
+      plugins = [
+        "git"
+        "z"
+      ];
+    };
+
+    histSize = 10000;
+    histFile = "$HOME/.zsh_history";
+  };
 }
