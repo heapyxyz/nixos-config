@@ -28,6 +28,7 @@ with lib.gvariant;
     gnome-tweaks
 
     gnomeExtensions.appindicator
+    gnomeExtensions.emoji-copy
   ];
 
   # dconf generated using dconf2nix
@@ -162,10 +163,10 @@ with lib.gvariant;
           "org/gnome/shell" = {
             favorite-apps = [
               "brave-browser.desktop"
+              "equibop.desktop"
               "code.desktop"
               "org.gnome.Nautilus.desktop"
               "com.mitchellh.ghostty.desktop"
-              "equibop.desktop"
             ];
           };
 
