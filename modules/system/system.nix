@@ -32,4 +32,9 @@
   };
 
   virtualisation.docker.enable = true;
+
+  environment.variables = {
+    EDITOR = "code --wait";
+    VISUAL = "code --wait";
+  };
 }
