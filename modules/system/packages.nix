@@ -53,8 +53,9 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      update = "sudo nixos-rebuild switch";
+      rebuild = "sudo nixos-rebuild switch";
       cleanup = "sudo nix-collect-garbage -d";
+      update = "cwd=($pwd) && cd /etc/nixos && nix flake update && cd $cwd";
     };
 
     ohMyZsh = {
@@ -67,5 +68,172 @@
 
     histSize = 10000;
     histFile = "$HOME/.zsh_history";
+  };
+
+  programs.starship = {
+    enable = true;
+    settings = {
+      "$schema" = "https://starship.rs/config-schema.json";
+
+      format =
+        "[](fg:color_bg3)"
+        + "$os"
+        + "$username"
+        + "$directory"
+        + "[](bg:color_bg2 fg:color_bg3)"
+        + "$git_branch"
+        + "$git_status"
+        + "$c"
+        + "$cpp"
+        + "$rust"
+        + "$golang"
+        + "$nodejs"
+        + "$bun"
+        + "$php"
+        + "$java"
+        + "$kotlin"
+        + "$haskell"
+        + "$python"
+        + "[](bg:color_bg1 fg:color_bg2)"
+        + "$time"
+        + "[ ](fg:color_bg1)"
+        + "$line_break$character";
+
+      palette = "heapy";
+
+      palettes.heapy = {
+        color_fg0 = "#e6e6e6";
+        color_bg1 = "#616161";
+        color_bg2 = "#4B73A3";
+        color_bg3 = "#3584E4";
+      };
+
+      os = {
+        disabled = false;
+        style = "bg:color_bg3 fg:color_fg0";
+        symbols = {
+          NixOS = "󰌽";
+        };
+      };
+
+      username = {
+        show_always = true;
+        style_user = "bg:color_bg3 fg:color_fg0";
+        style_root = "bg:color_bg3 fg:color_fg0";
+        format = "[ $user ]($style)";
+      };
+
+      directory = {
+        style = "bg:color_bg3 fg:color_fg0";
+        format = "[ $path ]($style)";
+        truncation_length = 5;
+        truncation_symbol = "…/";
+        substitutions = {
+          "Documents" = "󰈙 ";
+          "Downloads" = " ";
+          "Music" = "󰝚 ";
+          "Pictures" = " ";
+          "Developer" = "󰲋 ";
+        };
+      };
+
+      git_branch = {
+        symbol = "";
+        style = "bg:color_bg2";
+        format = "[[ $symbol $branch ](fg:color_fg0 bg:color_bg2)]($style)";
+      };
+
+      git_status = {
+        style = "bg:color_bg2";
+        format = "[[($all_status$ahead_behind )](fg:color_fg0 bg:color_bg2)]($style)";
+      };
+
+      nodejs = {
+        symbol = "";
+        style = "bg:color_bg2";
+        format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_bg2)]($style)";
+      };
+
+      bun = {
+        symbol = "";
+        style = "bg:color_bg2";
+        format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_bg2)]($style)";
+      };
+
+      c = {
+        symbol = " ";
+        style = "bg:color_bg2";
+        format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_bg2)]($style)";
+      };
+
+      cpp = {
+        symbol = " ";
+        style = "bg:color_bg2";
+        format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_bg2)]($style)";
+      };
+
+      rust = {
+        symbol = "";
+        style = "bg:color_bg2";
+        format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_bg2)]($style)";
+      };
+
+      golang = {
+        symbol = "";
+        style = "bg:color_bg2";
+        format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_bg2)]($style)";
+      };
+
+      php = {
+        symbol = "";
+        style = "bg:color_bg2";
+        format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_bg2)]($style)";
+      };
+
+      java = {
+        symbol = "";
+        style = "bg:color_bg2";
+        format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_bg2)]($style)";
+      };
+
+      kotlin = {
+        symbol = "";
+        style = "bg:color_bg2";
+        format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_bg2)]($style)";
+      };
+
+      haskell = {
+        symbol = "";
+        style = "bg:color_bg2";
+        format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_bg2)]($style)";
+      };
+
+      python = {
+        symbol = "";
+        style = "bg:color_bg2";
+        format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_bg2)]($style)";
+      };
+
+      time = {
+        disabled = false;
+        time_format = "%R";
+        style = "bg:color_bg1";
+        format = "[[  $time ](fg:color_fg0 bg:color_bg1)]($style)";
+      };
+
+      line_break = {
+        disabled = false;
+      };
+
+      character = {
+        disabled = false;
+        success_symbol = "[](bold fg:color_bg3)";
+        error_symbol = "[](bold fg:color_bg3)";
+        vimcmd_symbol = "[](bold fg:color_bg3)";
+        vimcmd_replace_one_symbol = "[](bold fg:color_bg3)";
+        vimcmd_replace_symbol = "[](bold fg:color_bg3)";
+        vimcmd_visual_symbol = "[](bold fg:color_bg3)";
+      };
+    };
   };
 }
