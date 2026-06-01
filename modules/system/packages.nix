@@ -16,7 +16,7 @@
     gh
     ghostty
     nixfmt
-    nodejs_25
+    nodejs_26
     pnpm
     telegram-desktop
     termius
@@ -126,7 +126,7 @@
       directory = {
         style = "bg:color_bg3 fg:color_fg0";
         format = "[ $path ]($style)";
-        truncation_length = 5;
+        truncation_length = 32;
         truncation_symbol = "…/";
         substitutions = {
           "Documents" = "󰈙 ";
