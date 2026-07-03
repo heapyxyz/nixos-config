@@ -22,11 +22,17 @@ with lib.gvariant;
   ];
 
   environment.systemPackages = with pkgs; [
-    nautilus
+    decibels # audio player
+    loupe # image viewer
+    nautilus # files app
+    showtime # video player
+
+    # gnome utilities
     gnome-disk-utility
     gnome-extension-manager
     gnome-tweaks
 
+    # gnome extensions
     gnomeExtensions.appindicator
     gnomeExtensions.emoji-copy
   ];
