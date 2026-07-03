@@ -54,9 +54,15 @@
 
     shellAliases = {
       rebuild = "sudo nixos-rebuild switch";
-      cleanup = "sudo nix-collect-garbage -d";
+      cleanup = "sudo nix-collect-garbage -d && nix-store --optimise";
       update = "cwd=($pwd) && cd /etc/nixos && nix flake update && cd $cwd";
     };
+
+    interactiveShellInit = ''
+      shell() {
+        nix-shell --command zsh -p "$@"
+      }
+    '';
 
     ohMyZsh = {
       enable = true;
