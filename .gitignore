@@ -1,2 +1,1 @@
-utils/*.nix
-utils/*.txt
+# no need to ignore anything (yet)

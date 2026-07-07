@@ -8,6 +8,7 @@
       "nix-command"
       "flakes"
     ];
+
     gc = {
       automatic = true;
       dates = "daily";
@@ -22,19 +23,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11"; # Did you read the comment?
-
-  # make ghostty default terminal
-  xdg.terminal-exec = {
-    enable = true;
-    settings = {
-      default = [ "com.mitchellh.ghostty.desktop" ];
-    };
-  };
-
-  virtualisation.docker.enable = true;
-
-  environment.variables = {
-    EDITOR = "code --wait";
-    VISUAL = "code --wait";
-  };
 }

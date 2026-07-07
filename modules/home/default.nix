@@ -1,4 +1,9 @@
-{ config, flake-dir, ... }:
+{
+  config,
+  flake-dir,
+  username,
+  ...
+}:
 let
   link = f: config.lib.file.mkOutOfStoreSymlink "${flake-dir}/modules/home/${f}";
 in
@@ -10,8 +15,8 @@ in
   fonts.fontconfig.enable = true;
 
   home = {
-    username = "heapy";
-    homeDirectory = "/home/heapy";
+    username = username;
+    homeDirectory = "/home/${username}";
     stateVersion = "25.11";
     enableNixpkgsReleaseCheck = false;
 
@@ -27,7 +32,7 @@ in
       };
 
       # https://github.com/vinceliuice/MacTahoe-icon-theme
-      # used icons from the `main` branch because latest release isn't up-to-date
+      # used icons from the main branch because latest release isn't up-to-date
       ".local/share/icons/MacTahoe" = {
         source = link "icons/MacTahoe";
         force = true;

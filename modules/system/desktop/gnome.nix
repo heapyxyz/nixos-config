@@ -2,6 +2,8 @@
   config,
   lib,
   pkgs,
+  username,
+  background,
   ...
 }:
 
@@ -11,8 +13,7 @@ with lib.gvariant;
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
-  # To disable installing GNOME's suite of applications
-  # and only be left with GNOME shell.
+  # disable installing GNOME's applications
   services.gnome.core-apps.enable = false;
   services.gnome.core-developer-tools.enable = false;
   services.gnome.games.enable = false;
@@ -27,18 +28,19 @@ with lib.gvariant;
     nautilus # files app
     showtime # video player
 
-    # gnome utilities
+    # utilities
     gnome-disk-utility
     gnome-extension-manager
     gnome-tweaks
 
-    # gnome extensions
+    # extensions
     gnomeExtensions.appindicator
     gnomeExtensions.emoji-copy
   ];
 
   # dconf generated using dconf2nix
   # https://github.com/gvolpe/dconf2nix
+  # it's not maintained anymore but does its job
   programs.dconf = {
     enable = true;
     profiles.user.databases = [
@@ -52,8 +54,8 @@ with lib.gvariant;
           "org/gnome/desktop/background" = {
             color-shading-type = "solid";
             picture-options = "zoom";
-            picture-uri = "file:///home/heapy/.local/share/backgrounds/tahoe-dark.jpeg";
-            picture-uri-dark = "file:///home/heapy/.local/share/backgrounds/tahoe-dark.jpeg";
+            picture-uri = "file:///home/${username}/.local/share/backgrounds/${background}";
+            picture-uri-dark = "file:///home/${username}/.local/share/backgrounds/${background}";
             primary-color = "#000000000000";
             secondary-color = "#000000000000";
           };
@@ -126,7 +128,7 @@ with lib.gvariant;
           "org/gnome/desktop/screensaver" = {
             color-shading-type = "solid";
             picture-options = "zoom";
-            picture-uri = "file:///home/heapy/.local/share/backgrounds/tahoe-dark.jpeg";
+            picture-uri = "file:///home/${username}/.local/share/backgrounds/${background}";
             primary-color = "#000000000000";
             secondary-color = "#000000000000";
           };

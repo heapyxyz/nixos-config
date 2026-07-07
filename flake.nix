@@ -2,8 +2,6 @@
   description = "NixOS config flake";
 
   inputs = {
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
-
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
@@ -16,23 +14,69 @@
     {
       self,
       nixpkgs,
-      nixpkgs-stable,
       ...
     }@inputs:
     let
       flake-dir = "/etc/nixos";
-      system = "x86_64-linux";
-      pkgs-stable = import nixpkgs-stable {
-        inherit system;
-        config.allowUnfree = true;
-      };
+      username = "heapy";
+      background = "tahoe-dark.jpeg"; # stored in ./modules/home/backgrounds/
     in
     {
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs flake-dir pkgs-stable; };
+        laptop = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit
+              inputs
+              flake-dir
+              username
+              background
+              ;
+
+            hostname = "laptop";
+          };
+
           modules = [
-            ./configuration.nix
+            ./hosts/laptop/configuration.nix
+            inputs.home-manager.nixosModules.default
+          ];
+        };
+
+        # todo: install nixos on pc and copy hardware-configuration.nix
+        pc = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit
+              inputs
+              flake-dir
+              username
+              background
+              ;
+
+            hostname = "pc";
+          };
+
+          modules = [
+            ./hosts/pc/configuration.nix
+            inputs.home-manager.nixosModules.default
+          ];
+        };
+
+        # todo: install nixos on home server and copy hardware-configuration.nix
+        # todo: finish ./modules/system/server/
+        # todo: use different home-manager configuration (not ./modules/home/) or not use it at all (?)
+        home-server = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit
+              inputs
+              flake-dir
+              username
+              background
+              ;
+
+            hostname = "home-server";
+          };
+
+          modules = [
+            ./hosts/home-server/configuration.nix
             inputs.home-manager.nixosModules.default
           ];
         };
