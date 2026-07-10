@@ -16,8 +16,11 @@
     vscode-fhs
   ];
 
+  fonts.enableDefaultPackages = true;
   fonts.packages = with pkgs; [
-    inter
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-color-emoji
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
   ];
@@ -40,19 +43,23 @@
     settings = {
       "$schema" = "https://starship.rs/config-schema.json";
 
-      format = "[](#9A348E)$os$username[](bg:#DA627D fg:#9A348E)$directory[](fg:#DA627D bg:#FCA17D)$git_branch$git_status[](fg:#FCA17D bg:#86BBD8)$c$cpp$nodejs$python$dotnet[](fg:#86BBD8 bg:#33658A)$time[ ](fg:#33658A)";
+      format = "[ ](fg:#9A348E)$os$username[](bg:#DA627D fg:#9A348E)$directory[](fg:#DA627D bg:#FCA17D)$git_branch$git_status[](fg:#FCA17D bg:#86BBD8)$c$cpp$nodejs$python$dotnet[](fg:#86BBD8 bg:#33658A)$time[ ](fg:#33658A)";
 
       username = {
         show_always = true;
         style_user = "bg:#9A348E";
         style_root = "bg:#9A348E";
-        format = "[$user ]($style)";
+        format = "[ $user ]($style)";
         disabled = false;
       };
 
       os = {
         style = "bg:#9A348E";
-        disabled = true;
+        format = "[ $symbol]($style)";
+        disabled = false;
+        symbols = {
+          NixOS = "";
+        };
       };
 
       directory = {
