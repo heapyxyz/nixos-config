@@ -134,6 +134,12 @@ with lib.gvariant;
       };
 
       "org/gnome/shell" = {
+        disable-user-extensions = false;
+        enabled-extensions = [
+          "appindicatorsupport@rgcjonas.gmail.com"
+          "emoji-copy@felipeftn"
+          "AlphabeticalAppGrid@stuarthayhurst"
+        ];
         favorite-apps = [
           "brave-browser.desktop"
           "equibop.desktop"
@@ -141,7 +147,6 @@ with lib.gvariant;
           "org.gnome.Nautilus.desktop"
           "com.mitchellh.ghostty.desktop"
         ];
-
         app-picker-layout = mkEmptyArray type.string;
       };
 

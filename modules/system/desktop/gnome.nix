@@ -25,6 +25,7 @@
     gnome-tweaks
 
     # extensions
+    gnomeExtensions.alphabetical-app-grid
     gnomeExtensions.appindicator
     gnomeExtensions.emoji-copy
   ];
