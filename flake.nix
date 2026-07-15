@@ -41,7 +41,6 @@
           ];
         };
 
-        # todo: install nixos on pc and copy hardware-configuration.nix
         pc = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit
