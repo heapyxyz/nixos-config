@@ -13,6 +13,11 @@
     ../../modules/system/desktop
   ];
 
+  services.udev.extraRules = ''
+    # prevent udisks auto-mount
+    ENV{ID_FS_UUID}=="2E366D0D366CD77D", ENV{UDISKS_IGNORE}="1"
+  '';
+
   home-manager = {
     extraSpecialArgs = {
       inherit
