@@ -3,6 +3,7 @@
   flake-dir,
   hostname,
   username,
+  background,
   ...
 }:
 
@@ -19,6 +20,7 @@
         flake-dir
         hostname
         username
+        background
         ;
     };
 

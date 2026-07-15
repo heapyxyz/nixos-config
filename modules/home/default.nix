@@ -4,6 +4,7 @@
   username,
   ...
 }:
+
 let
   link = f: config.lib.file.mkOutOfStoreSymlink "${flake-dir}/modules/home/${f}";
 in
