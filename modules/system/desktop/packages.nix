@@ -16,14 +16,19 @@
     vscode-fhs
   ];
 
-  fonts.enableDefaultPackages = true;
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-color-emoji
-    nerd-fonts.fira-code
-    nerd-fonts.jetbrains-mono
-  ];
+  fonts = {
+    enableDefaultPackages = true;
+    fontDir.enable = true;
+    packages = with pkgs; [
+      noto-fonts
+      noto-fonts-lgc-plus
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      noto-fonts-color-emoji
+      nerd-fonts.fira-code
+      nerd-fonts.jetbrains-mono
+    ];
+  };
 
   programs.steam = {
     enable = true;
