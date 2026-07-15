@@ -142,10 +142,12 @@ with lib.gvariant;
         ];
         favorite-apps = [
           "brave-browser.desktop"
+          "steam.desktop"
           "equibop.desktop"
           "code.desktop"
           "org.gnome.Nautilus.desktop"
           "com.mitchellh.ghostty.desktop"
+          "termius-app.desktop"
         ];
         app-picker-layout = mkEmptyArray type.string;
       };
