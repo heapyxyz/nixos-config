@@ -9,6 +9,7 @@
     ghostty
     nixfmt
     nodejs_26
+    pgadmin4-desktopmode
     pnpm
     telegram-desktop
     termius
