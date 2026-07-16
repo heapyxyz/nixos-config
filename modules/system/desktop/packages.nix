@@ -52,7 +52,7 @@
     settings = {
       "$schema" = "https://starship.rs/config-schema.json";
 
-      format = "[ ](fg:#9A348E)$os$username[](bg:#DA627D fg:#9A348E)$directory[](fg:#DA627D bg:#FCA17D)$git_branch$git_status[](fg:#FCA17D bg:#86BBD8)$c$cpp$nodejs$python$dotnet[](fg:#86BBD8 bg:#33658A)$time[ ](fg:#33658A)";
+      format = "[ ](fg:#9A348E)$os$username[](bg:#DA627D fg:#9A348E)$directory[](fg:#DA627D bg:#FCA17D)$git_branch[](fg:#FCA17D bg:#86BBD8)$c$cpp$nodejs$python$dotnet[](fg:#86BBD8 bg:#33658A)$time[ ](fg:#33658A)";
 
       username = {
         show_always = true;
@@ -86,31 +86,31 @@
       };
 
       c = {
-        symbol = " ";
+        symbol = "";
         style = "bg:#86BBD8";
         format = "[ $symbol ($version) ]($style)";
       };
 
       cpp = {
-        symbol = " ";
+        symbol = "";
         style = "bg:#86BBD8";
         format = "[ $symbol ($version) ]($style)";
       };
 
       nodejs = {
-        symbol = "󰎙 ";
+        symbol = "󰎙";
         style = "bg:#86BBD8";
         format = "[ $symbol ($version) ]($style)";
       };
 
       python = {
-        symbol = " ";
+        symbol = "";
         style = "bg:#86BBD8";
         format = "[ $symbol ($version) ]($style)";
       };
 
       dotnet = {
-        symbol = "󰌛 ";
+        symbol = "󰌛";
         style = "bg:#86BBD8";
         format = "[ $symbol ($version) ]($style)";
       };
@@ -119,11 +119,6 @@
         symbol = "";
         style = "bg:#FCA17D";
         format = "[ $symbol $branch ]($style)";
-      };
-
-      git_status = {
-        style = "bg:#FCA17D";
-        format = "[$all_status$ahead_behind ]($style)";
       };
 
       time = {
