@@ -18,6 +18,7 @@
     loupe # image viewer
     nautilus # files app
     showtime # video player
+    gnome-text-editor # text editor
 
     # utilities
     gnome-disk-utility
