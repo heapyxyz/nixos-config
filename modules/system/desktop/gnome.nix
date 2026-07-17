@@ -24,6 +24,7 @@
     gnome-disk-utility
     gnome-extension-manager
     gnome-tweaks
+    gnome-themes-extra
 
     # extensions
     gnomeExtensions.alphabetical-app-grid

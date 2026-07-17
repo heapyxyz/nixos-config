@@ -53,7 +53,7 @@ with lib.gvariant;
         font-name = "Adwaita Sans 11";
         gtk-enable-primary-paste = false;
         gtk-key-theme = "Default";
-        gtk-theme = "Adwaita";
+        gtk-theme = "Adwaita-dark";
         gtk-timeout-initial = mkUint32 200;
         gtk-timeout-repeat = mkUint32 20;
         icon-theme = "MacTahoe-dark-bold";
