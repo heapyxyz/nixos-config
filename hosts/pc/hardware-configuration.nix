@@ -29,7 +29,7 @@
   ];
   boot.kernelParams = [ "xe.force_probe=e20b" ];
   boot.extraModulePackages = [ ];
-  boot.supportedFilesystems = [ "ntfs3" ];
+  boot.supportedFilesystems = [ ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/aade6512-e26c-4c93-8576-7045ff708318";
@@ -70,13 +70,11 @@
   };
 
   fileSystems."/mnt/data" = {
-    device = "/dev/disk/by-uuid/2E366D0D366CD77D";
-    fsType = "ntfs3";
+    device = "/dev/disk/by-uuid/36c588ae-6b13-4b21-a352-061894935196";
+    fsType = "ext4";
     options = [
       "nofail"
-      "uid=1000"
-      "gid=100"
-      "umask=000"
+      "x-gvfs-show"
     ];
   };
 }
