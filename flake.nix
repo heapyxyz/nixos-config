@@ -8,6 +8,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    mactahoe-src = {
+      url = "github:vinceliuice/MacTahoe-icon-theme";
+      flake = false;
+    };
   };
 
   outputs =
@@ -38,6 +43,15 @@
           modules = [
             ./hosts/laptop/configuration.nix
             inputs.home-manager.nixosModules.default
+            {
+              nixpkgs.overlays = [
+                (final: prev: {
+                  mactahoe-icon-theme = final.callPackage ./pkgs/mactahoe-icon-theme {
+                    mactahoe-src = inputs.mactahoe-src;
+                  };
+                })
+              ];
+            }
           ];
         };
 
@@ -56,6 +70,15 @@
           modules = [
             ./hosts/pc/configuration.nix
             inputs.home-manager.nixosModules.default
+            {
+              nixpkgs.overlays = [
+                (final: prev: {
+                  mactahoe-icon-theme = final.callPackage ./pkgs/mactahoe-icon-theme {
+                    mactahoe-src = inputs.mactahoe-src;
+                  };
+                })
+              ];
+            }
           ];
         };
 
@@ -77,6 +100,15 @@
           modules = [
             ./hosts/home-server/configuration.nix
             inputs.home-manager.nixosModules.default
+            {
+              nixpkgs.overlays = [
+                (final: prev: {
+                  mactahoe-icon-theme = final.callPackage ./pkgs/mactahoe-icon-theme {
+                    mactahoe-src = inputs.mactahoe-src;
+                  };
+                })
+              ];
+            }
           ];
         };
       };

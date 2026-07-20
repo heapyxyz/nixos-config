@@ -56,7 +56,7 @@ with lib.gvariant;
         gtk-theme = "Adwaita-dark";
         gtk-timeout-initial = mkUint32 200;
         gtk-timeout-repeat = mkUint32 20;
-        icon-theme = "MacTahoe-dark-bold";
+        icon-theme = "MacTahoe-dark";
         monospace-font-name = "JetBrainsMono Nerd Font 11";
         scaling-factor = mkUint32 0;
         text-scaling-factor = 1.0;

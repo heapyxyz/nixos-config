@@ -1,5 +1,6 @@
 {
   config,
+  pkgs,
   flake-dir,
   username,
   ...
@@ -31,21 +32,8 @@ in
         source = link "backgrounds";
         force = true;
       };
-
-      # https://github.com/vinceliuice/MacTahoe-icon-theme
-      # used icons from the main branch because latest release isn't up-to-date
-      ".local/share/icons/MacTahoe" = {
-        source = link "icons/MacTahoe";
-        force = true;
-      };
-      ".local/share/icons/MacTahoe-dark" = {
-        source = link "icons/MacTahoe-dark";
-        force = true;
-      };
-      ".local/share/icons/MacTahoe-dark-bold" = {
-        source = link "icons/MacTahoe-dark-bold";
-        force = true;
-      };
     };
+
+    packages = [ pkgs.mactahoe-icon-theme ];
   };
 }

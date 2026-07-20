@@ -7,16 +7,32 @@
         ]
       },
       "locked": {
-        "lastModified": 1784407317,
-        "narHash": "sha256-iZrxHToDJWnvt+5LGAtvuQMTy1NZYlNEKbKaVtBJNcc=",
+        "lastModified": 1784489491,
+        "narHash": "sha256-j9maqjx1T8+ljAVntAdSI5hSGCm77QNZz64JF1rJNu0=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "39411a8e12a5526d992e65bc7e3dc9a4414d6713",
+        "rev": "3139deb8cafbe73b39b24451255b2fdd3426077e",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "mactahoe-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1783220844,
+        "narHash": "sha256-CXZn4r1B+eB2Uv00vutFGQjOKJIia/I5RkPOBAAJKYA=",
+        "owner": "vinceliuice",
+        "repo": "MacTahoe-icon-theme",
+        "rev": "94c7e615a94e352366c3d5298efda16e86bc6da7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vinceliuice",
+        "repo": "MacTahoe-icon-theme",
         "type": "github"
       }
     },
@@ -39,6 +55,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "mactahoe-src": "mactahoe-src",
         "nixpkgs": "nixpkgs"
       }
     }
