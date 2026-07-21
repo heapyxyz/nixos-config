@@ -11,6 +11,7 @@
     nodejs_26
     pgadmin4-desktopmode
     pnpm
+    prismlauncher
     telegram-desktop
     termius
     steam-run
