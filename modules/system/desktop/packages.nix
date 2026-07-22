@@ -55,7 +55,7 @@
     settings = {
       "$schema" = "https://starship.rs/config-schema.json";
 
-      format = "[ ](fg:#9A348E)$os$username[](bg:#DA627D fg:#9A348E)$directory[](fg:#DA627D bg:#FCA17D)$git_branch[](fg:#FCA17D bg:#86BBD8)$c$cpp$nodejs$python$dotnet[](fg:#86BBD8 bg:#33658A)$time[ ](fg:#33658A)";
+      format = "$os$username[](bg:#DA627D fg:#9A348E)$directory[](fg:#DA627D bg:#FCA17D)$git_branch[](fg:#FCA17D bg:#86BBD8)$c$cpp$nodejs$python$dotnet[](fg:#86BBD8 bg:#33658A)$time[ ](fg:#33658A)\n$character";
 
       username = {
         show_always = true;
@@ -129,6 +129,11 @@
         time_format = "%R"; # Hour:Minute format
         style = "bg:#33658A";
         format = "[ $time ]($style)";
+      };
+
+      character = {
+        disabled = false;
+        format = "[ $symbol ]($style)";
       };
     };
   };
