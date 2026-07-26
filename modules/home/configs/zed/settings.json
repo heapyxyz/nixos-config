@@ -1,4 +1,73 @@
 {
+  "ensure_final_newline_on_save": false,
+  "show_edit_predictions": false,
+  "prettier": {
+    "allowed": true,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "languages": {
+    "CSharp": {
+      "formatter": "language_server",
+      "tab_size": 4
+    },
+    "C": {
+      "formatter": "language_server",
+      "tab_size": 4
+    },
+    "C++": {
+      "formatter": "language_server",
+      "tab_size": 4
+    },
+    "Python": {
+      "formatter": "language_server",
+      "tab_size": 4
+    },
+    "JavaScript": {
+      "formatter": "prettier",
+      "tab_size": 2
+    },
+    "TypeScript": {
+      "formatter": "prettier",
+      "tab_size": 2
+    },
+    "TSX": {
+      "formatter": "prettier",
+      "tab_size": 2
+    },
+    "JSON": {
+      "formatter": "prettier",
+      "tab_size": 2
+    },
+    "CSS": {
+      "formatter": "prettier",
+      "tab_size": 2
+    },
+    "HTML": {
+      "formatter": "prettier",
+      "tab_size": 4
+    },
+    "XML": {
+      "formatter": "language_server",
+      "tab_size": 4
+    },
+    "TOML": {
+      "formatter": "prettier",
+      "tab_size": 4
+    },
+    "YAML": {
+      "formatter": "prettier",
+      "tab_size": 2
+    },
+    "Nix": {
+      "formatter": "language_server",
+      "tab_size": 2
+    },
+    "Prisma": {
+      "formatter": "language_server",
+      "tab_size": 2
+    }
+  },
   "auto_install_extensions": {
     "assembly": true,
     "codebook": true,
