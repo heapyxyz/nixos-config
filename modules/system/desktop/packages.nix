@@ -15,6 +15,7 @@
     pgadmin4-desktopmode
     pnpm
     prismlauncher
+    python314
     telegram-desktop
     termius
     steam-run
