@@ -1,0 +1,33 @@
+{
+  "multi_cursor_modifier": "alt",
+  "format_on_save": "on",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+    "anthropic_retention": false
+  },
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "terminal": {
+    "font_family": "JetBrainsMono Nerd Font"
+  },
+  "node": {
+    "npm_path": "pnpm"
+  },
+  "minimap": {
+    "show": "always"
+  },
+  "autosave": "on_focus_change",
+  "buffer_font_fallbacks": ["JetBrainsMono Nerd Font"],
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "file_types": {
+    "tailwindcss": ["*.css"],
+    "jsonc": ["*.json"]
+  },
+  "auto_indent_on_paste": true,
+  "soft_wrap": "editor_width",
+  "icon_theme": "VSCode Icons for Zed (Dark)",
+  "theme": "macOS Classic Dark",
+  "base_keymap": "VSCode"
+}

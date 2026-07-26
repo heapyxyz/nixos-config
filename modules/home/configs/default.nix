@@ -12,5 +12,10 @@ in
       source = link "ghostty";
       force = true;
     };
+
+    "zed" = {
+      source = link "zed";
+      force = true;
+    };
   };
 }

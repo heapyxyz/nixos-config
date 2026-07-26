@@ -18,6 +18,7 @@
     termius
     steam-run
     vscode-fhs
+    zed-editor
   ];
 
   fonts = {
