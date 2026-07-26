@@ -47,4 +47,6 @@
     histSize = 10000;
     histFile = "$HOME/.zsh_history";
   };
+
+  programs.nix-ld.enable = true;
 }
