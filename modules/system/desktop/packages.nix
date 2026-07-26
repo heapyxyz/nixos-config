@@ -117,6 +117,11 @@
         symbol = "󰌛";
         style = "bg:#86BBD8";
         format = "[ $symbol ($version) ]($style)";
+        detect_extensions = [
+          "csproj"
+          "sln"
+          "slnx"
+        ];
       };
 
       git_branch = {
