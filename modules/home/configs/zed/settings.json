@@ -1,5 +1,44 @@
 {
-  "multi_cursor_modifier": "alt",
+  "auto_install_extensions": {
+    "assembly": true,
+    "codebook": true,
+    "comment": true,
+    "csharp": true,
+    "dockerfile": true,
+    "env": true,
+    "git-firefly": true,
+    "html": true,
+    "ini": true,
+    "json5": true,
+    "latex": true,
+    "log": true,
+    "ltex": true,
+    "macos-classic": true,
+    "make": true,
+    "neocmake": true,
+    "nix": true,
+    "prisma": true,
+    "rainbow-csv": true,
+    "sql": true,
+    "toml": true,
+    "vscode-icons": true,
+    "xml": true
+  },
+  "agent": {
+    "dock": "right"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "project_panel": {
+    "dock": "left"
+  },
   "format_on_save": "on",
   "telemetry": {
     "diagnostics": false,
