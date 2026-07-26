@@ -5,6 +5,7 @@
     apple-cursor
     brave
     clang-tools
+    dotnet-sdk_10
     equibop
     ghostty
     heroic
@@ -20,6 +21,10 @@
     vscode-fhs
     zed-editor
   ];
+
+  environment.sessionVariables = {
+    DOTNET_ROOT = "${pkgs.dotnet-sdk_10}/share/dotnet";
+  };
 
   fonts = {
     enableDefaultPackages = true;
