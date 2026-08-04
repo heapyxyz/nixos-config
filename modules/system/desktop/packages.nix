@@ -9,7 +9,6 @@
     equibop
     ghostty
     heroic
-    lutris
     nixfmt
     nodejs_26
     pgadmin4-desktopmode
