@@ -18,7 +18,6 @@
     telegram-desktop
     termius
     steam-run
-    vscode-fhs
     zed-editor
   ];
 
