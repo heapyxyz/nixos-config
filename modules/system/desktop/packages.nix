@@ -19,6 +19,10 @@
     termius
     steam-run
     zed-editor
+
+    # for zed extensions
+    nil
+    nixd
   ];
 
   environment.sessionVariables = {
