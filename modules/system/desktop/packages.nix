@@ -9,6 +9,7 @@
     equibop
     ghostty
     heroic
+    mangohud
     nixfmt
     nodejs_26
     pgadmin4-desktopmode
