@@ -144,7 +144,7 @@ with lib.gvariant;
           "brave-browser.desktop"
           "steam.desktop"
           "equibop.desktop"
-          "dev.zed.Zed.desktop"
+          "code.desktop"
           "org.gnome.Nautilus.desktop"
           "com.mitchellh.ghostty.desktop"
           "termius-app.desktop"

@@ -2,28 +2,32 @@
 
 {
   environment.systemPackages = with pkgs; [
-    apple-cursor
+    # apps
     brave
-    clang-tools
-    dotnet-sdk_10
     equibop
     ghostty
     heroic
-    mangohud
-    nixfmt
-    nodejs_26
     pgadmin4-desktopmode
-    pnpm
     prismlauncher
-    python314
     telegram-desktop
     termius
-    steam-run
-    zed-editor
+    vscode-fhs
 
-    # for zed extensions
-    nil
+    # coding
+    clang-tools
+    dotnet-sdk_10
+    nodejs_26
+    pnpm
+    python314
+
+    # nix lsp
     nixd
+    nixfmt
+
+    # other
+    apple-cursor
+    mangohud
+    steam-run
   ];
 
   environment.sessionVariables = {
