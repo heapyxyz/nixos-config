@@ -7,6 +7,7 @@
     equibop
     ghostty
     heroic
+    obs-studio
     pgadmin4-desktopmode
     prismlauncher
     telegram-desktop
