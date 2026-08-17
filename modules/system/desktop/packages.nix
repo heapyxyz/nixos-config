@@ -33,6 +33,7 @@
 
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk_10}/share/dotnet";
+    NIXOS_OZONE_WL = "1";
   };
 
   fonts = {
