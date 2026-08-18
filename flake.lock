@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786719456,
-        "narHash": "sha256-B74DLQs/VjlqyhnnX3tguWwghqJHWSJX30TKZuAljIg=",
+        "lastModified": 1786999651,
+        "narHash": "sha256-MTGMFlLDTklsXhCp4r5GXB4VAVadPdalXLvUjd/K7h0=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "83b7606dcf44abe3a94b86e8bb2b3355d22e8797",
+        "rev": "353742587cbaf079b3caee743115d037bc51fea6",
         "type": "github"
       },
       "original": {
@@ -23,11 +23,11 @@
     "mactahoe-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1786383227,
-        "narHash": "sha256-4zYbSR7aKjyFRYEP6UL/76WJrnzoP+T/JMVBXOcN1vI=",
+        "lastModified": 1787033720,
+        "narHash": "sha256-eXwl6DankXrhfwLAepFfeDQIcf5o0iCB6kBDldKGVbI=",
         "owner": "vinceliuice",
         "repo": "MacTahoe-icon-theme",
-        "rev": "db9a4f8b236d3c559326f041d75d5173de118c45",
+        "rev": "e5c5982c27b0d48d8cfe04dbf1aac3f6bae2f033",
         "type": "github"
       },
       "original": {
@@ -38,11 +38,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1786599213,
-        "narHash": "sha256-yNJd40f11EzXBjSByCB7IPpeFFAdeoSKKM67dGkfFoU=",
+        "lastModified": 1787001381,
+        "narHash": "sha256-Ue1Yo8gfHdD4TMtNewhA4tkSYeFqXThju0nCyJc3ALo=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "0e251e24a4f24e036a084b6b4b2d2491af4167f4",
+        "rev": "ec2d622de0773551768cf98f3fc50cbcc003b9c5",
         "type": "github"
       },
       "original": {
