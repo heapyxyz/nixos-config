@@ -8,6 +8,7 @@
     ghostty
     heroic
     obs-studio
+    openlogi
     pgadmin4-desktopmode
     prismlauncher
     telegram-desktop
