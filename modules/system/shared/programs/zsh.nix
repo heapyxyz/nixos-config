@@ -16,6 +16,7 @@
       shell = "nix-shell --command zsh ";
       ls = "eza ";
       tree = "eza --tree ";
+      pullall = "for d in *(/); do [ -d \"$d/.git\" ]; echo \"Pulling: $d\"; git -C \"$d\" pull; done";
     };
 
     ohMyZsh = {
