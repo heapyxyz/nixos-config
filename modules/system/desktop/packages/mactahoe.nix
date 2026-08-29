@@ -3,8 +3,8 @@
   lib,
   gtk3,
   jdupes,
-  hicolor-icon-theme,
   mactahoe-src,
+  ...
 }:
 
 stdenvNoCC.mkDerivation {

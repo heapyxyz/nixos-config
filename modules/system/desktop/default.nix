@@ -2,8 +2,7 @@
 
 {
   imports = [
-    ./gnome.nix
-    ./packages.nix
+    ./programs
     ./system.nix
     ./virtualisation.nix
 

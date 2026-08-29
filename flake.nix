@@ -13,6 +13,11 @@
       url = "github:vinceliuice/MacTahoe-icon-theme";
       flake = false;
     };
+
+    openlogi = {
+      url = "github:AprilNEA/OpenLogi";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -43,15 +48,7 @@
           modules = [
             ./hosts/laptop/configuration.nix
             inputs.home-manager.nixosModules.default
-            {
-              nixpkgs.overlays = [
-                (final: prev: {
-                  mactahoe-icon-theme = final.callPackage ./pkgs/mactahoe-icon-theme {
-                    mactahoe-src = inputs.mactahoe-src;
-                  };
-                })
-              ];
-            }
+            inputs.openlogi.nixosModules.default
           ];
         };
 
@@ -70,15 +67,7 @@
           modules = [
             ./hosts/pc/configuration.nix
             inputs.home-manager.nixosModules.default
-            {
-              nixpkgs.overlays = [
-                (final: prev: {
-                  mactahoe-icon-theme = final.callPackage ./pkgs/mactahoe-icon-theme {
-                    mactahoe-src = inputs.mactahoe-src;
-                  };
-                })
-              ];
-            }
+            inputs.openlogi.nixosModules.default
           ];
         };
 
@@ -100,15 +89,6 @@
           modules = [
             ./hosts/home-server/configuration.nix
             inputs.home-manager.nixosModules.default
-            {
-              nixpkgs.overlays = [
-                (final: prev: {
-                  mactahoe-icon-theme = final.callPackage ./pkgs/mactahoe-icon-theme {
-                    mactahoe-src = inputs.mactahoe-src;
-                  };
-                })
-              ];
-            }
           ];
         };
       };

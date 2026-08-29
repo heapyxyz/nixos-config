@@ -1,25 +1,6 @@
-{
-  pkgs,
-  flake-dir,
-  hostname,
-  ...
-}:
+{ flake-dir, hostname, ... }:
 
 {
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  environment.systemPackages = with pkgs; [
-    btop
-    eza
-    fastfetch
-    git
-    gh
-    wget
-  ];
-
-  services.cloudflare-warp.enable = true;
-
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -48,6 +29,4 @@
     histSize = 10000;
     histFile = "$HOME/.zsh_history";
   };
-
-  programs.nix-ld.enable = true;
 }

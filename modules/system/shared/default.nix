@@ -5,7 +5,7 @@
     ./boot.nix
     ./locale.nix
     ./networking.nix
-    ./packages.nix
+    ./programs
     ./system.nix
     ./users.nix
   ];
