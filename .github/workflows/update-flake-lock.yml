@@ -9,6 +9,9 @@ permissions:
   contents: write
   pull-requests: write
 
+env:
+  GIT_COMMIT_MESSAGE: "chore: update flake"
+
 jobs:
   lockfile:
     runs-on: ubuntu-latest
