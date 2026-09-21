@@ -16,7 +16,11 @@
     equibop
     ghostty
     heroic
-    obs-studio
+    (obs-studio.overrideAttrs (oldAttrs: {
+      postInstall = (oldAttrs.postInstall or "") + ''
+        wrapProgram $out/bin/obs --set QT_QPA_PLATFORM xcb
+      '';
+    }))
     pgadmin4-desktopmode
     prismlauncher
     telegram-desktop
