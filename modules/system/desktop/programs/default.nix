@@ -4,6 +4,7 @@
   imports = [
     ./fonts.nix
     ./gnome.nix
+    ./lact.nix
     ./openlogi.nix
     ./overlays.nix
     ./starship.nix
