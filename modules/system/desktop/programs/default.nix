@@ -20,7 +20,7 @@
     heroic
     (obs-studio.overrideAttrs (oldAttrs: {
       postInstall = (oldAttrs.postInstall or "") + ''
-        wrapProgram $out/bin/obs --set QT_QPA_PLATFORM xcb
+        wrapProgram $out/bin/obs --set QT_QPA_PLATFORM xcb --add-flags --startreplaybuffer
       '';
     }))
     pgadmin4-desktopmode
