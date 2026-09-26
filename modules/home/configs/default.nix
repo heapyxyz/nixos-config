@@ -5,6 +5,7 @@ in
 {
   imports = [
     ./dconf.nix
+    ./opencode.nix
   ];
 
   xdg.configFile = {
