@@ -27,6 +27,7 @@
     prismlauncher
     telegram-desktop
     termius
+    unityhub
     vscode-fhs
 
     # coding
