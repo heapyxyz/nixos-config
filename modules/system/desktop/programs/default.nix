@@ -5,6 +5,7 @@
     ./fonts.nix
     ./gnome.nix
     ./lact.nix
+    ./obs.nix
     ./openlogi.nix
     ./overlays.nix
     ./starship.nix
@@ -18,11 +19,6 @@
     equibop
     ghostty
     heroic
-    (obs-studio.overrideAttrs (oldAttrs: {
-      postInstall = (oldAttrs.postInstall or "") + ''
-        wrapProgram $out/bin/obs --set QT_QPA_PLATFORM xcb --add-flags --startreplaybuffer
-      '';
-    }))
     pgadmin4-desktopmode
     prismlauncher
     telegram-desktop
@@ -37,7 +33,7 @@
     pnpm
     python314
 
-    # nix lsp
+    # nix stuff
     nixd
     nixfmt
 
