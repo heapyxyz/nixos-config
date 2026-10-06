@@ -15,7 +15,6 @@
   environment.systemPackages = with pkgs; [
     # apps
     brave
-    davinci-resolve
     equibop
     ghostty
     heroic
