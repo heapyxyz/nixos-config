@@ -28,8 +28,8 @@
             "baseURL" = "https://api.cheaperinference.com/v1";
           };
           "models" = {
-            "deepseek-v4-flash-0731" = {
-              "name" = "DeepSeek V4 Flash 0731";
+            "deepseek-v4.1-flash" = {
+              "name" = "DeepSeek V4.1 Flash";
               "reasoning" = true;
             };
           };
