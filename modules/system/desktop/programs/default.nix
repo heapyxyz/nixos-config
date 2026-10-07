@@ -5,7 +5,6 @@
     ./fonts.nix
     ./gnome.nix
     ./lact.nix
-    ./obs.nix
     ./openlogi.nix
     ./overlays.nix
     ./starship.nix
@@ -18,6 +17,7 @@
     equibop
     ghostty
     heroic
+    obs-studio
     pgadmin4-desktopmode
     prismlauncher
     telegram-desktop
