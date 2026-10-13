@@ -1,7 +1,8 @@
 {
   lib,
-  username,
+  pkgs,
   background,
+  flake-dir,
   ...
 }:
 
@@ -19,8 +20,8 @@ with lib.gvariant;
       "org/gnome/desktop/background" = {
         color-shading-type = "solid";
         picture-options = "zoom";
-        picture-uri = "file:///home/${username}/.local/share/backgrounds/${background}";
-        picture-uri-dark = "file:///home/${username}/.local/share/backgrounds/${background}";
+        picture-uri = "file://${flake-dir}/modules/home/backgrounds/${background}";
+        picture-uri-dark = "file://${flake-dir}/modules/home/backgrounds/${background}";
         primary-color = "#000000000000";
         secondary-color = "#000000000000";
       };
@@ -93,7 +94,7 @@ with lib.gvariant;
       "org/gnome/desktop/screensaver" = {
         color-shading-type = "solid";
         picture-options = "zoom";
-        picture-uri = "file:///home/${username}/.local/share/backgrounds/${background}";
+        picture-uri = "file://${flake-dir}/modules/home/backgrounds/${background}";
         primary-color = "#000000000000";
         secondary-color = "#000000000000";
       };
@@ -135,10 +136,17 @@ with lib.gvariant;
 
       "org/gnome/shell" = {
         disable-user-extensions = false;
-        enabled-extensions = [
-          "appindicatorsupport@rgcjonas.gmail.com"
-          "emoji-copy@felipeftn"
-          "AlphabeticalAppGrid@stuarthayhurst"
+        enabled-extensions = map (n: pkgs.gnomeExtensions.${n}.extensionUuid) [
+          "alphabetical-app-grid"
+          "appindicator"
+          "auto-accent-colour"
+          "bluetooth-battery-meter"
+          "blur-my-shell"
+          "color-picker"
+          "dynamic-music-pill"
+          "emoji-copy"
+          "privacy-indicators-accent-color"
+          "wireless-hid"
         ];
         favorite-apps = [
           "brave-browser.desktop"
@@ -150,18 +158,6 @@ with lib.gvariant;
           "termius-app.desktop"
         ];
         app-picker-layout = mkEmptyArray type.string;
-      };
-
-      "org/gnome/shell/extensions/appindicator" = {
-        icon-brightness = 0.0;
-        icon-contrast = 0.0;
-        icon-opacity = mkUint32 240;
-        icon-saturation = 0.0;
-        icon-size = mkUint32 0;
-      };
-
-      "org/gnome/tweaks" = {
-        show-extensions-notice = false;
       };
 
       "org/gnome/shell/keybindings" = {

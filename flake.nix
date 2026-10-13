@@ -29,7 +29,7 @@
     let
       flake-dir = "/etc/nixos";
       username = "heapy";
-      background = "tahoe-dark.jpeg"; # stored in ./modules/home/backgrounds/
+      background = "golden-dark.png"; # stored in ./modules/home/backgrounds/
     in
     {
       nixosConfigurations = {

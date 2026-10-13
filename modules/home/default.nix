@@ -1,14 +1,9 @@
 {
-  config,
   pkgs,
-  flake-dir,
   username,
   ...
 }:
 
-let
-  link = f: config.lib.file.mkOutOfStoreSymlink "${flake-dir}/modules/home/${f}";
-in
 {
   imports = [
     ./configs
@@ -25,13 +20,6 @@ in
     # make ghostty default terminal
     sessionVariables = {
       TERMINAL = "ghostty";
-    };
-
-    file = {
-      ".local/share/backgrounds" = {
-        source = link "backgrounds";
-        force = true;
-      };
     };
 
     packages = [ pkgs.mactahoe-icon-theme ];

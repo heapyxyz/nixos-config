@@ -1,8 +1,32 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  lib,
+  ...
+}:
 
 {
-  services.displayManager.gdm.enable = true;
+  services.displayManager.gdm = {
+    enable = true;
+    # make icons/cursor available to the gdm greeter
+    extraPackages = [
+      pkgs.mactahoe-icon-theme
+      pkgs.apple-cursor
+    ];
+  };
   services.desktopManager.gnome.enable = true;
+
+  programs.dconf.profiles.gdm.databases = lib.mkBefore [
+    {
+      settings = {
+        "org/gnome/desktop/interface" = {
+          color-scheme = "prefer-dark";
+          cursor-theme = "macOS";
+          gtk-theme = "Adwaita-dark";
+          icon-theme = "MacTahoe-dark";
+        };
+      };
+    }
+  ];
 
   # disable installing GNOME's applications
   services.gnome.core-apps.enable = false;
@@ -29,6 +53,13 @@
     # extensions
     gnomeExtensions.alphabetical-app-grid
     gnomeExtensions.appindicator
+    gnomeExtensions.auto-accent-colour
+    gnomeExtensions.bluetooth-battery-meter
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.color-picker
+    gnomeExtensions.dynamic-music-pill
     gnomeExtensions.emoji-copy
+    gnomeExtensions.privacy-indicators-accent-color
+    gnomeExtensions.wireless-hid
   ];
 }
