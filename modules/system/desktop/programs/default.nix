@@ -30,6 +30,7 @@
     dotnet-sdk_10
     nodejs_26
     pnpm
+    pyright
     python314
 
     # nix stuff

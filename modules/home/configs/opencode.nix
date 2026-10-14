@@ -6,7 +6,23 @@
     enableMcpIntegration = true;
     settings = {
       shell = "${pkgs.zsh}/bin/zsh";
-      lsp = true;
+      lsp = {
+        pyright = {
+          command = [
+            "pyright-langserver"
+            "--stdio"
+          ];
+          initialization.python.pythonPath = "\${workspaceFolder}/.venv/bin/python";
+        };
+        clangd = {
+          command = [
+            "clangd"
+            "--background-index"
+            "--clang-tidy"
+            "--compile-commands-dir=build"
+          ];
+        };
+      };
       formatter = true;
       plugin = [
         "@dietrichgebert/ponytail"
