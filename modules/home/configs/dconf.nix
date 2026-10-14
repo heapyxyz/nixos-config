@@ -143,7 +143,6 @@ with lib.gvariant;
           "bluetooth-battery-meter"
           "blur-my-shell"
           "color-picker"
-          "dynamic-music-pill"
           "emoji-copy"
           "privacy-indicators-accent-color"
           "wireless-hid"

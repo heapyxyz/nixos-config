@@ -57,7 +57,6 @@
     gnomeExtensions.bluetooth-battery-meter
     gnomeExtensions.blur-my-shell
     gnomeExtensions.color-picker
-    gnomeExtensions.dynamic-music-pill
     gnomeExtensions.emoji-copy
     gnomeExtensions.privacy-indicators-accent-color
     gnomeExtensions.wireless-hid
