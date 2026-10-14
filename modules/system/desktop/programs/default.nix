@@ -17,6 +17,7 @@
     equibop
     dbgate
     ghostty
+    ghidra-bin
     heroic
     obs-studio
     prismlauncher
@@ -29,6 +30,7 @@
     clang-tools
     dotnet-sdk_10
     nodejs_26
+    openjdk21
     pnpm
     pyright
     python314
