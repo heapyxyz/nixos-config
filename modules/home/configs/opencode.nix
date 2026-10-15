@@ -46,6 +46,45 @@ in
         };
       };
       formatter = true;
+      tools = {
+        "rea_*" = false;
+      };
+      agent.rea = {
+        mode = "primary";
+        description = "Reverse engineering with REA tools";
+        tools = {
+          open_binary = true;
+          close_binary = true;
+          binary_overview = true;
+          list_procedures = true;
+          search_procedures = true;
+          analyze_function = true;
+          procedure_pseudo_code = true;
+          procedure_assembly = true;
+          procedure_info = true;
+          procedure_callers = true;
+          procedure_callees = true;
+          batch_decompile = true;
+          read_function_instructions = true;
+          resolve_containing_procedure = true;
+          xrefs = true;
+          find_xrefs_to_name = true;
+          get_call_graph = true;
+          trace_call_path = true;
+          build_call_path = true;
+          list_strings = true;
+          search_strings = true;
+          search_bytes = true;
+          list_names = true;
+          list_segments = true;
+          read_bytes = true;
+          annotate_native_function = true;
+          set_comment = true;
+          set_inline_comment = true;
+          inspect_analysis_view = true;
+          get_evidence_bundle = true;
+        };
+      };
       skills.paths = [
         "${rea}/.agents/skills"
         "${caveman}/skills"
