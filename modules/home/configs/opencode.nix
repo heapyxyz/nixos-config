@@ -137,10 +137,6 @@ in
   };
 
   xdg.configFile = {
-    "opencode/.ponytail-active" = {
-      source = link "opencode/.ponytail-active";
-      force = true;
-    };
     "opencode/dcp.jsonc" = {
       source = link "opencode/dcp.jsonc";
       force = true;
