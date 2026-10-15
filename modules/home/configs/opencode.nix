@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  flake-dir,
+  config,
+  ...
+}:
 
 let
   rea = pkgs.fetchFromGitHub {
@@ -15,6 +20,7 @@ let
     rev = "d262ab3882952a59312ff3537cd86d894523c5ab";
     hash = "sha256-2xZHdWkWJrPAJ8++qW0Xmb3eORZ41e+GsZjIphqTtlI=";
   };
+  link = f: config.lib.file.mkOutOfStoreSymlink "${flake-dir}/modules/home/configs/${f}";
 in
 {
   programs.opencode = {
@@ -86,6 +92,21 @@ in
           };
         };
       };
+    };
+  };
+
+  xdg.configFile = {
+    "opencode/.ponytail-active" = {
+      source = link "opencode/.ponytail-active";
+      force = true;
+    };
+    "opencode/dcp.jsonc" = {
+      source = link "opencode/dcp.jsonc";
+      force = true;
+    };
+    "opencode/vibeguard.config.json" = {
+      source = link "opencode/vibeguard.config.json";
+      force = true;
     };
   };
 }
