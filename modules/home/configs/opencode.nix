@@ -83,11 +83,13 @@ in
           "name" = "Cheaper Inference";
           "options" = {
             "baseURL" = "https://api.cheaperinference.com/v1";
+            "setCacheKey" = true;
           };
           "models" = {
             "deepseek-v4.1-flash" = {
               "name" = "DeepSeek V4.1 Flash";
               "reasoning" = true;
+              "cache" = true;
             };
           };
         };
