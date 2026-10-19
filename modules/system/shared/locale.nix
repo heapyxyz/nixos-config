@@ -7,6 +7,11 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
+  i18n.extraLocales = [
+    "pl_PL.UTF-8/UTF-8"
+    "pl_PL/ISO-8859-2"
+  ];
+
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
     LC_IDENTIFICATION = "en_US.UTF-8";
