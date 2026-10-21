@@ -4,7 +4,6 @@
   imports = [
     ./fonts.nix
     ./gnome.nix
-    ./lact.nix
     ./overlays.nix
     ./starship.nix
     ./steam.nix
@@ -48,4 +47,6 @@
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk_10}/share/dotnet";
   };
+
+  services.lact.enable = true;
 }
