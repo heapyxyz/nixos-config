@@ -13,11 +13,6 @@
       url = "github:vinceliuice/MacTahoe-icon-theme";
       flake = false;
     };
-
-    openlogi = {
-      url = "github:AprilNEA/OpenLogi";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -48,7 +43,6 @@
           modules = [
             ./hosts/laptop/configuration.nix
             inputs.home-manager.nixosModules.default
-            inputs.openlogi.nixosModules.default
           ];
         };
 
@@ -67,7 +61,6 @@
           modules = [
             ./hosts/pc/configuration.nix
             inputs.home-manager.nixosModules.default
-            inputs.openlogi.nixosModules.default
           ];
         };
 
