@@ -21,6 +21,7 @@
     heroic
     obs-studio
     prismlauncher
+    shotcut
     telegram-desktop
     termius
     unityhub
