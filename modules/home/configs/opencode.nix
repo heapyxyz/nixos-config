@@ -91,7 +91,6 @@ in
       ];
       plugin = [
         "@dietrichgebert/ponytail"
-        "opencode-vibeguard"
         "@tarquinen/opencode-dcp"
         "cc-safety-net"
         "superpowers@git+https://github.com/obra/superpowers.git"
@@ -139,10 +138,6 @@ in
   xdg.configFile = {
     "opencode/dcp.jsonc" = {
       source = link "opencode/dcp.jsonc";
-      force = true;
-    };
-    "opencode/vibeguard.config.json" = {
-      source = link "opencode/vibeguard.config.json";
       force = true;
     };
   };
