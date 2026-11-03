@@ -13,6 +13,11 @@
       url = "github:vinceliuice/MacTahoe-icon-theme";
       flake = false;
     };
+
+    nix-additional = {
+      url = "github:heapyxyz/nix-additional";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -43,6 +48,7 @@
           modules = [
             ./hosts/laptop/configuration.nix
             inputs.home-manager.nixosModules.default
+            inputs.nix-additional.nixosModules.default
           ];
         };
 
@@ -61,6 +67,7 @@
           modules = [
             ./hosts/pc/configuration.nix
             inputs.home-manager.nixosModules.default
+            inputs.nix-additional.nixosModules.default
           ];
         };
 
@@ -82,6 +89,7 @@
           modules = [
             ./hosts/home-server/configuration.nix
             inputs.home-manager.nixosModules.default
+            inputs.nix-additional.nixosModules.default
           ];
         };
       };

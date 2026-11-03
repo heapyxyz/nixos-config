@@ -36,6 +36,26 @@
         "type": "github"
       }
     },
+    "nix-additional": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1793744671,
+        "narHash": "sha256-NMhuVJUN8l9l+H24D3DpMNoo9rXVjrzbpnmad80NFGs=",
+        "owner": "heapyxyz",
+        "repo": "nix-additional",
+        "rev": "3b53439cbd9adc52eb772975970b2a271951b270",
+        "type": "github"
+      },
+      "original": {
+        "owner": "heapyxyz",
+        "repo": "nix-additional",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1793341285,
@@ -56,6 +76,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "mactahoe-src": "mactahoe-src",
+        "nix-additional": "nix-additional",
         "nixpkgs": "nixpkgs"
       }
     }

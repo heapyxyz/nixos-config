@@ -8,6 +8,20 @@
 
 with lib.gvariant;
 
+let
+  liquidGlassPipeline = "pipeline_custom_liquid_glass";
+
+  # Nix attrset -> GVariant a{sv}
+  mkDict =
+    attrs: mkArray (lib.mapAttrsToList (key: value: mkDictionaryEntry key (mkVariant value)) attrs);
+
+  mkPipeline =
+    name: effects:
+    mkDict {
+      inherit name;
+      effects = mkArray (map (effect: mkVariant (mkDict effect)) effects);
+    };
+in
 {
   dconf = {
     enable = true;
@@ -157,6 +171,97 @@ with lib.gvariant;
           "termius-app.desktop"
         ];
         app-picker-layout = mkEmptyArray type.string;
+      };
+
+      "org/gnome/shell/extensions/blur-my-shell" = {
+        pipelines = mkArray [
+          (mkDictionaryEntry "pipeline_default" (
+            mkPipeline "Default" [
+              {
+                type = "dual_kawase_blur";
+                id = "effect_000000000000";
+                params = mkDict {
+                  unscaled_radius = mkInt32 30;
+                  brightness = 0.6;
+                };
+              }
+            ]
+          ))
+          (mkDictionaryEntry liquidGlassPipeline (
+            mkPipeline "Custom Liquid Glass" [
+              {
+                type = "luminosity";
+                id = "effect_custom_luminosity";
+                params = mkDict {
+                  saturation_multiplicator = mkInt32 1;
+                  brightness_shift = mkInt32 0;
+                  brightness_multiplicator = 0.95;
+                };
+              }
+              {
+                type = "refraction";
+                id = "effect_custom_refraction";
+                params = mkDict {
+                  tint = mkInt32 0;
+                  blur_radius = mkInt32 16;
+                  rim_width = 6.5;
+                  fresnel_angle = mkInt32 45;
+                  fresnel_width = mkInt32 1;
+                  specular_strength = mkInt32 0;
+                  backdrop_zoom = mkInt32 1;
+                  texture_repeat = mkInt32 0;
+                };
+              }
+            ]
+          ))
+        ];
+        rounded-blur-found = false;
+        settings-version = 8;
+      };
+
+      "org/gnome/shell/extensions/blur-my-shell/appfolder" = {
+        pipeline = liquidGlassPipeline;
+        style-dialogs = 1;
+      };
+
+      "org/gnome/shell/extensions/blur-my-shell/applications" = {
+        pipeline = "pipeline_default";
+      };
+
+      "org/gnome/shell/extensions/blur-my-shell/coverflow-alt-tab" = {
+        pipeline = liquidGlassPipeline;
+      };
+
+      "org/gnome/shell/extensions/blur-my-shell/dash-to-dock" = {
+        pipeline = liquidGlassPipeline;
+        style-dash-to-dock = 0;
+      };
+
+      "org/gnome/shell/extensions/blur-my-shell/lockscreen" = {
+        pipeline = "pipeline_default";
+      };
+
+      "org/gnome/shell/extensions/blur-my-shell/overview" = {
+        pipeline = "pipeline_default";
+        style-components = 4;
+      };
+
+      "org/gnome/shell/extensions/blur-my-shell/panel" = {
+        pipeline = "pipeline_default";
+        style-panel = 0;
+      };
+
+      "org/gnome/shell/extensions/blur-my-shell/popup" = {
+        pipeline = liquidGlassPipeline;
+        style-popup = 0;
+      };
+
+      "org/gnome/shell/extensions/blur-my-shell/screenshot" = {
+        pipeline = liquidGlassPipeline;
+      };
+
+      "org/gnome/shell/extensions/blur-my-shell/window-list" = {
+        pipeline = liquidGlassPipeline;
       };
 
       "org/gnome/shell/keybindings" = {

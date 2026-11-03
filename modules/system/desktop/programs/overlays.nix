@@ -16,5 +16,7 @@
         '';
       });
     })
+    # latest version of blur-my-shell gnome extension
+    inputs.nix-additional.overlays.blur-my-shell
   ];
 }
