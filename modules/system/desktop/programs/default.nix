@@ -11,7 +11,7 @@
 
   environment.systemPackages = with pkgs; [
     # apps
-    brave
+    brave-origin
     equibop
     dbgate
     ghostty

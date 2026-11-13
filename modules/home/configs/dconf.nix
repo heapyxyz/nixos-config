@@ -162,7 +162,7 @@ in
           "wireless-hid"
         ];
         favorite-apps = [
-          "brave-browser.desktop"
+          "brave-origin.desktop"
           "steam.desktop"
           "equibop.desktop"
           "code.desktop"
