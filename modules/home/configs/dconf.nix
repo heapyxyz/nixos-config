@@ -9,8 +9,6 @@
 with lib.gvariant;
 
 let
-  liquidGlassPipeline = "pipeline_custom_liquid_glass";
-
   # Nix attrset -> GVariant a{sv}
   mkDict =
     attrs: mkArray (lib.mapAttrsToList (key: value: mkDictionaryEntry key (mkVariant value)) attrs);
@@ -187,81 +185,97 @@ in
               }
             ]
           ))
-          (mkDictionaryEntry liquidGlassPipeline (
-            mkPipeline "Custom Liquid Glass" [
+          (mkDictionaryEntry "pipeline_liquid_glass" (
+            mkPipeline "Liquid Glass" [
               {
                 type = "luminosity";
-                id = "effect_custom_luminosity";
+                id = "effect_liquid_glass_luminosity";
                 params = mkDict {
-                  saturation_multiplicator = mkInt32 1;
-                  brightness_shift = mkInt32 0;
-                  brightness_multiplicator = 0.95;
+                  saturation_multiplicator = 1.1;
                 };
               }
               {
                 type = "refraction";
-                id = "effect_custom_refraction";
+                id = "effect_liquid_glass_refraction";
                 params = mkDict {
                   tint = mkInt32 0;
-                  blur_radius = mkInt32 16;
-                  rim_width = 6.5;
-                  fresnel_angle = mkInt32 45;
-                  fresnel_width = mkInt32 1;
-                  specular_strength = mkInt32 0;
-                  backdrop_zoom = mkInt32 1;
-                  texture_repeat = mkInt32 0;
+                };
+              }
+              {
+                type = "noise";
+                id = "effect_liquid_glass_noise";
+                params = mkDict {
+                  noise = 0.1;
                 };
               }
             ]
           ))
         ];
         rounded-blur-found = false;
-        settings-version = 8;
       };
 
       "org/gnome/shell/extensions/blur-my-shell/appfolder" = {
-        pipeline = liquidGlassPipeline;
-        style-dialogs = 1;
+        blur-behind-folders = false;
+        pipeline = "pipeline_liquid_glass";
+        pipeline-dark = "pipeline_default";
+        pipeline-light = "pipeline_default";
       };
 
       "org/gnome/shell/extensions/blur-my-shell/applications" = {
         pipeline = "pipeline_default";
+        pipeline-dark = "pipeline_default";
+        pipeline-light = "pipeline_default";
       };
 
       "org/gnome/shell/extensions/blur-my-shell/coverflow-alt-tab" = {
-        pipeline = liquidGlassPipeline;
+        pipeline = "pipeline_default";
+        pipeline-dark = "pipeline_default";
+        pipeline-light = "pipeline_default";
       };
 
       "org/gnome/shell/extensions/blur-my-shell/dash-to-dock" = {
-        pipeline = liquidGlassPipeline;
-        style-dash-to-dock = 0;
+        pipeline = "pipeline_liquid_glass";
+        pipeline-dark = "pipeline_default";
+        pipeline-light = "pipeline_default";
+        static-blur = true;
       };
 
       "org/gnome/shell/extensions/blur-my-shell/lockscreen" = {
         pipeline = "pipeline_default";
+        pipeline-dark = "pipeline_default";
+        pipeline-light = "pipeline_default";
       };
 
       "org/gnome/shell/extensions/blur-my-shell/overview" = {
         pipeline = "pipeline_default";
-        style-components = 4;
+        pipeline-dark = "pipeline_default";
+        pipeline-light = "pipeline_default";
       };
 
       "org/gnome/shell/extensions/blur-my-shell/panel" = {
         pipeline = "pipeline_default";
-        style-panel = 0;
+        pipeline-dark = "pipeline_default";
+        pipeline-light = "pipeline_default";
+        static-blur = true;
       };
 
       "org/gnome/shell/extensions/blur-my-shell/popup" = {
-        pipeline = liquidGlassPipeline;
-        style-popup = 0;
+        pipeline = "pipeline_liquid_glass";
+        pipeline-auto-mode = false;
+        pipeline-dark = "pipeline_default";
+        pipeline-light = "pipeline_default";
       };
 
       "org/gnome/shell/extensions/blur-my-shell/screenshot" = {
-        pipeline = liquidGlassPipeline;
+        pipeline = "pipeline_default";
+        pipeline-dark = "pipeline_default";
+        pipeline-light = "pipeline_default";
       };
 
       "org/gnome/shell/extensions/blur-my-shell/window-list" = {
-        pipeline = liquidGlassPipeline;
+        pipeline = "pipeline_default";
+        pipeline-dark = "pipeline_default";
+        pipeline-light = "pipeline_default";
       };
 
       "org/gnome/shell/keybindings" = {
