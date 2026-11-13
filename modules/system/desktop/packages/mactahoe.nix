@@ -26,7 +26,7 @@ stdenvNoCC.mkDerivation {
     runHook preInstall
 
     # install base themes
-    bash install.sh -d $out/share/icons -n MacTahoe
+    bash install.sh -d $out/share/icons -n MacTahoe -b
 
     # remove unwanted inheritance
     for theme in "$out/share/icons"/*; do
