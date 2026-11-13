@@ -8,6 +8,10 @@
         mactahoe-src = inputs.mactahoe-src;
       };
     })
+    # apple-cursor custom package that works on gnome 51 (i love gnome)
+    (final: prev: {
+      apple-cursor = final.callPackage ../packages/apple-cursor.nix { };
+    })
     # run obs in wayland, start with replay buffer enabled
     (final: prev: {
       obs-studio = prev.obs-studio.overrideAttrs (oldAttrs: {

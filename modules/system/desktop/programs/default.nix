@@ -39,7 +39,6 @@
     nixfmt
 
     # other
-    apple-cursor
     mangohud
     steam-run
   ];

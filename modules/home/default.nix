@@ -22,6 +22,13 @@
       TERMINAL = "ghostty";
     };
 
-    packages = [ pkgs.mactahoe-icon-theme ];
+    packages = with pkgs; [ mactahoe-icon-theme ];
+
+    pointerCursor = {
+      enable = true;
+      name = "macOS";
+      size = 24;
+      package = pkgs.apple-cursor;
+    };
   };
 }
