@@ -96,19 +96,30 @@ in
           };
         };
       };
-      provider = {
+      providers = {
         "cheaper-inference" = {
-          "npm" = "@ai-sdk/openai-compatible";
-          "name" = "Cheaper Inference";
-          "options" = {
-            "baseURL" = "https://api.cheaperinference.com/v1";
-            "setCacheKey" = true;
+          package = "@opencode/ai/providers/openai-compatible";
+          name = "Cheaper Inference";
+          settings = {
+            baseURL = "https://api.cheaperinference.com/v1";
           };
-          "models" = {
+          compatibility = {
+            supportsPromptCacheKey = true;
+          };
+          models = {
             "deepseek-v4.1-flash" = {
-              "name" = "DeepSeek V4.1 Flash";
-              "reasoning" = true;
-              "cache" = true;
+              name = "DeepSeek V4.1 Flash";
+              capabilities = {
+                reasoning = {
+                  supported = true;
+                  effort = [
+                    "low"
+                    "medium"
+                    "high"
+                    "max"
+                  ];
+                };
+              };
             };
           };
         };
