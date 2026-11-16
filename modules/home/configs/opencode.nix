@@ -9,16 +9,16 @@ let
   rea = pkgs.fetchFromGitHub {
     owner = "morluto";
     repo = "rea";
-    # fix(ghidra): admit newer 12.x releases as compatible builds (#6924)
-    rev = "0d1a454e25db825567782e461da21530bad4b158";
-    hash = "sha256-WqoNeYLtcTosEUV+mZLucJRsGajJ/id0ZU0jYYk+mE0=";
+    # refactor(mcp): bind Electron tools through shared contracts
+    rev = "d6bcfc10eafa3c0893c7cbd5f3dc6a90359be022";
+    hash = "sha256-BnZ8TvXSei1XdGopEd5ZUXMbBMLzkSaie980jtDNIT8=";
   };
   caveman = pkgs.fetchFromGitHub {
     owner = "JuliusBrussee";
     repo = "caveman";
-    # Merge pull request #1394 from JuliusBrussee/daily-triage/2026-10-25
-    rev = "9b68f7ed12b05e7efaff18e65c5a3fc2849fd0a4";
-    hash = "sha256-fuSsPP7GMuAZ5Ab2paS41RAo5k/objd503ElcMeMgsk=";
+    # docs: refresh star history chart (#1537)
+    rev = "9b243662ff98d392bc0a95b865a554583d71be75";
+    hash = "sha256-1X2DjYa4xqO1ZqwxdFjCmaypp0+HYncEpXaut4i9LkE=";
   };
   link = f: config.lib.file.mkOutOfStoreSymlink "${flake-dir}/modules/home/configs/${f}";
 in
