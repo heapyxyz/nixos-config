@@ -30,68 +30,35 @@
       flake-dir = "/etc/nixos";
       username = "heapy";
       background = "golden-dark.png"; # stored in ./modules/home/backgrounds/
+      mkHost =
+        hostname:
+        nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit
+              inputs
+              flake-dir
+              username
+              background
+              hostname
+              ;
+          };
+
+          modules = [
+            (./hosts + "/${hostname}/configuration.nix")
+            inputs.home-manager.nixosModules.default
+            inputs.nix-additional.nixosModules.default
+          ];
+        };
     in
     {
       nixosConfigurations = {
-        laptop = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit
-              inputs
-              flake-dir
-              username
-              background
-              ;
-
-            hostname = "laptop";
-          };
-
-          modules = [
-            ./hosts/laptop/configuration.nix
-            inputs.home-manager.nixosModules.default
-            inputs.nix-additional.nixosModules.default
-          ];
-        };
-
-        pc = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit
-              inputs
-              flake-dir
-              username
-              background
-              ;
-
-            hostname = "pc";
-          };
-
-          modules = [
-            ./hosts/pc/configuration.nix
-            inputs.home-manager.nixosModules.default
-            inputs.nix-additional.nixosModules.default
-          ];
-        };
+        laptop = mkHost "laptop";
+        pc = mkHost "pc";
 
         # todo: install nixos on home server and copy hardware-configuration.nix
         # todo: finish ./modules/system/server/
         # todo: use different home-manager configuration (not ./modules/home/) or not use it at all (?)
-        home-server = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit
-              inputs
-              flake-dir
-              username
-              background
-              ;
-
-            hostname = "home-server";
-          };
-
-          modules = [
-            ./hosts/home-server/configuration.nix
-            inputs.home-manager.nixosModules.default
-            inputs.nix-additional.nixosModules.default
-          ];
-        };
+        home-server = mkHost "home-server";
       };
     };
 }
