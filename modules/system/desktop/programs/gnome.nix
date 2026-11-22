@@ -8,9 +8,9 @@
   services.displayManager.gdm = {
     enable = true;
     # make icons/cursor available to the gdm greeter
-    extraPackages = [
-      pkgs.mactahoe-icon-theme
-      pkgs.apple-cursor
+    extraPackages = with pkgs; [
+      apple-cursor
+      (mactahoe-icon-theme.override { withBold = true; })
     ];
   };
   services.desktopManager.gnome.enable = true;

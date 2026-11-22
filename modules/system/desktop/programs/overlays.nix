@@ -2,17 +2,7 @@
 
 {
   nixpkgs.overlays = [
-    # mactahoe-icon-theme package for home-manager (/modules/home/default.nix)
-    (final: prev: {
-      mactahoe-icon-theme = final.callPackage ../packages/mactahoe.nix {
-        mactahoe-src = inputs.mactahoe-src;
-      };
-    })
-    # apple-cursor custom package that works on gnome 51 (i love gnome)
-    (final: prev: {
-      apple-cursor = final.callPackage ../packages/apple-cursor.nix { };
-    })
-    # run obs in wayland, start with replay buffer enabled
+    # run obs in x11 (fixes keybinds when obs is not in focus), start with replay buffer enabled
     (final: prev: {
       obs-studio = prev.obs-studio.overrideAttrs (oldAttrs: {
         postInstall = (oldAttrs.postInstall or "") + ''
@@ -20,7 +10,11 @@
         '';
       });
     })
+    # apple-cursor custom package that works on gnome 51 (i love gnome)
+    inputs.nix-additional.overlays.apple-cursor
     # latest version of blur-my-shell gnome extension
     inputs.nix-additional.overlays.blur-my-shell
+    # mactahoe-icon-theme package for home-manager
+    inputs.nix-additional.overlays.mactahoe-icon-theme
   ];
 }

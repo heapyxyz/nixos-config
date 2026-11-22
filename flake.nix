@@ -9,11 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    mactahoe-src = {
-      url = "github:vinceliuice/MacTahoe-icon-theme";
-      flake = false;
-    };
-
     nix-additional = {
       url = "github:heapyxyz/nix-additional";
       inputs.nixpkgs.follows = "nixpkgs";

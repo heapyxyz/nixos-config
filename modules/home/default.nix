@@ -22,7 +22,9 @@
       TERMINAL = "ghostty";
     };
 
-    packages = with pkgs; [ mactahoe-icon-theme ];
+    packages = with pkgs; [
+      (mactahoe-icon-theme.override { withBold = true; })
+    ];
 
     pointerCursor = {
       enable = true;
