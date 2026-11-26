@@ -14,67 +14,73 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = [
-    "nvme"
-    "xhci_pci"
-    "ahci"
-    "usb_storage"
-    "usbhid"
-    "sd_mod"
-  ];
-  boot.initrd.kernelModules = [ "xe" ];
-  boot.kernelModules = [
-    "kvm-amd"
-    "xe"
-  ];
-  boot.kernelParams = [ "xe.force_probe=e20b" ];
-  boot.extraModulePackages = [ ];
-  boot.supportedFilesystems = [ ];
-
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/aade6512-e26c-4c93-8576-7045ff708318";
-    fsType = "ext4";
+  boot = {
+    initrd = {
+      availableKernelModules = [
+        "nvme"
+        "xhci_pci"
+        "ahci"
+        "usb_storage"
+        "usbhid"
+        "sd_mod"
+      ];
+      kernelModules = [ "xe" ];
+    };
+    kernelModules = [
+      "kvm-amd"
+      "xe"
+    ];
+    kernelParams = [ "xe.force_probe=e20b" ];
+    extraModulePackages = [ ];
+    supportedFilesystems = [ ];
   };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/67E3-8C5E";
-    fsType = "vfat";
-    options = [
-      "fmask=0077"
-      "dmask=0077"
-    ];
+  fileSystems = {
+    "/" = {
+      device = "/dev/disk/by-uuid/aade6512-e26c-4c93-8576-7045ff708318";
+      fsType = "ext4";
+    };
+    "/boot" = {
+      device = "/dev/disk/by-uuid/67E3-8C5E";
+      fsType = "vfat";
+      options = [
+        "fmask=0077"
+        "dmask=0077"
+      ];
+    };
+    "/mnt/data" = {
+      device = "/dev/disk/by-uuid/36c588ae-6b13-4b21-a352-061894935196";
+      fsType = "ext4";
+      options = [
+        "nofail"
+        "x-gvfs-show"
+      ];
+    };
   };
 
   swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  hardware.enableRedistributableFirmware = true;
-
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-    extraPackages = with pkgs; [
-      intel-media-driver
-      intel-compute-runtime
-      vpl-gpu-rt
-    ];
-    extraPackages32 = with pkgs.pkgsi686Linux; [
-      intel-media-driver
-    ];
+  hardware = {
+    logitech.wireless.enable = true;
+    cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    enableRedistributableFirmware = true;
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+      extraPackages = with pkgs; [
+        intel-media-driver
+        intel-compute-runtime
+        vpl-gpu-rt
+      ];
+      extraPackages32 = with pkgs.pkgsi686Linux; [
+        intel-media-driver
+      ];
+    };
   };
 
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "iHD";
     MESA_LOADER_DRIVER_NAME = "iris";
-  };
-
-  fileSystems."/mnt/data" = {
-    device = "/dev/disk/by-uuid/36c588ae-6b13-4b21-a352-061894935196";
-    fsType = "ext4";
-    options = [
-      "nofail"
-      "x-gvfs-show"
-    ];
   };
 }
