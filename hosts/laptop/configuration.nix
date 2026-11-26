@@ -3,11 +3,7 @@
   flake-dir,
   hostname,
   username,
-  background,
-  cursor-theme,
-  gtk-theme,
-  icon-theme,
-  mouse-speed,
+  desktop,
   ...
 }:
 
@@ -26,11 +22,7 @@
         flake-dir
         hostname
         username
-        background
-        cursor-theme
-        gtk-theme
-        icon-theme
-        mouse-speed
+        desktop
         ;
     };
 

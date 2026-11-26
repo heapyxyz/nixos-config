@@ -1,12 +1,8 @@
 {
   lib,
   pkgs,
-  background,
   flake-dir,
-  cursor-theme,
-  gtk-theme,
-  icon-theme,
-  mouse-speed,
+  desktop,
   ...
 }:
 
@@ -36,8 +32,8 @@ in
       "org/gnome/desktop/background" = {
         color-shading-type = "solid";
         picture-options = "zoom";
-        picture-uri = "file://${flake-dir}/modules/home/backgrounds/${background}";
-        picture-uri-dark = "file://${flake-dir}/modules/home/backgrounds/${background}";
+        picture-uri = "file://${flake-dir}/modules/home/backgrounds/${desktop.background}";
+        picture-uri-dark = "file://${flake-dir}/modules/home/backgrounds/${desktop.background}";
         primary-color = "#000000000000";
         secondary-color = "#000000000000";
       };
@@ -63,17 +59,17 @@ in
         cursor-blink-time = mkUint32 1200;
         cursor-blink-timeout = mkUint32 10;
         cursor-size = mkUint32 24;
-        cursor-theme = cursor-theme;
+        cursor-theme = desktop.cursor-theme;
         document-font-name = "Adwaita Sans 11";
         enable-animations = true;
         font-antialiasing = "grayscale";
         font-name = "Adwaita Sans 11";
         gtk-enable-primary-paste = false;
         gtk-key-theme = "Default";
-        gtk-theme = gtk-theme;
+        gtk-theme = desktop.gtk-theme;
         gtk-timeout-initial = mkUint32 200;
         gtk-timeout-repeat = mkUint32 20;
-        icon-theme = icon-theme;
+        icon-theme = desktop.icon-theme;
         monospace-font-name = "JetBrainsMono Nerd Font 11";
         scaling-factor = mkUint32 0;
         text-scaling-factor = 1.0;
@@ -87,7 +83,7 @@ in
         left-handed = false;
         middle-click-emulation = false;
         natural-scroll = false;
-        speed = mouse-speed;
+        speed = desktop.mouse-speed;
       };
 
       "org/gnome/desktop/peripherals/touchpad" = {
@@ -110,7 +106,7 @@ in
       "org/gnome/desktop/screensaver" = {
         color-shading-type = "solid";
         picture-options = "zoom";
-        picture-uri = "file://${flake-dir}/modules/home/backgrounds/${background}";
+        picture-uri = "file://${flake-dir}/modules/home/backgrounds/${desktop.background}";
         primary-color = "#000000000000";
         secondary-color = "#000000000000";
       };

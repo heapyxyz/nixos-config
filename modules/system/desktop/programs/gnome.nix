@@ -1,10 +1,7 @@
 {
   pkgs,
   lib,
-  cursor-theme,
-  gtk-theme,
-  icon-theme,
-  mouse-speed,
+  desktop,
   ...
 }:
 
@@ -24,14 +21,14 @@
       settings = {
         "org/gnome/desktop/interface" = {
           color-scheme = "prefer-dark";
-          cursor-theme = cursor-theme;
-          gtk-theme = gtk-theme;
-          icon-theme = icon-theme;
+          cursor-theme = desktop.cursor-theme;
+          gtk-theme = desktop.gtk-theme;
+          icon-theme = desktop.icon-theme;
         };
 
         "org/gnome/desktop/peripherals/mouse" = {
           accel-profile = "flat";
-          speed = mouse-speed;
+          speed = desktop.mouse-speed;
         };
       };
     }
