@@ -18,6 +18,7 @@
     ghostty
     ghidra-bin
     heroic
+    pinta
     prismlauncher
     shotcut
     telegram-desktop
