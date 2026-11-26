@@ -4,6 +4,7 @@
   imports = [
     ./fonts.nix
     ./gnome.nix
+    ./obs-studio.nix
     ./overlays.nix
     ./starship.nix
     ./steam.nix
@@ -17,7 +18,6 @@
     ghostty
     ghidra-bin
     heroic
-    obs-studio
     prismlauncher
     shotcut
     telegram-desktop

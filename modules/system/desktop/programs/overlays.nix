@@ -2,11 +2,11 @@
 
 {
   nixpkgs.overlays = [
-    # run obs in x11 (fixes keybinds when obs is not in focus), start with replay buffer enabled
+    # start with replay buffer enabled
     (final: prev: {
       obs-studio = prev.obs-studio.overrideAttrs (oldAttrs: {
         postInstall = (oldAttrs.postInstall or "") + ''
-          wrapProgram $out/bin/obs --set QT_QPA_PLATFORM xcb --add-flags --startreplaybuffer
+          wrapProgram $out/bin/obs --add-flags --startreplaybuffer
         '';
       });
     })
