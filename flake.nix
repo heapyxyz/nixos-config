@@ -25,6 +25,11 @@
       flake-dir = "/etc/nixos";
       username = "heapy";
       background = "golden-dark.png"; # stored in ./modules/home/backgrounds/
+      cursor-theme = "macOS";
+      gtk-theme = "Adwaita-dark";
+      icon-theme = "MacTahoe-dark";
+      mouse-speed = -0.5;
+
       mkHost =
         hostname:
         nixpkgs.lib.nixosSystem {
@@ -35,6 +40,10 @@
               username
               background
               hostname
+              cursor-theme
+              gtk-theme
+              icon-theme
+              mouse-speed
               ;
           };
 

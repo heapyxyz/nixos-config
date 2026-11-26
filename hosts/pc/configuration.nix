@@ -4,6 +4,10 @@
   hostname,
   username,
   background,
+  cursor-theme,
+  gtk-theme,
+  icon-theme,
+  mouse-speed,
   ...
 }:
 
@@ -23,6 +27,10 @@
         hostname
         username
         background
+        cursor-theme
+        gtk-theme
+        icon-theme
+        mouse-speed
         ;
     };
 

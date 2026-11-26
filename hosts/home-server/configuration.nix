@@ -24,6 +24,6 @@
         ;
     };
 
-    users.${username} = import ../../modules/home;
+    # users.${username} = import ../../modules/home;
   };
 }

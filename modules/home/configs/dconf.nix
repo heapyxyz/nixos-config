@@ -3,6 +3,10 @@
   pkgs,
   background,
   flake-dir,
+  cursor-theme,
+  gtk-theme,
+  icon-theme,
+  mouse-speed,
   ...
 }:
 
@@ -59,17 +63,17 @@ in
         cursor-blink-time = mkUint32 1200;
         cursor-blink-timeout = mkUint32 10;
         cursor-size = mkUint32 24;
-        cursor-theme = "macOS";
+        cursor-theme = cursor-theme;
         document-font-name = "Adwaita Sans 11";
         enable-animations = true;
         font-antialiasing = "grayscale";
         font-name = "Adwaita Sans 11";
         gtk-enable-primary-paste = false;
         gtk-key-theme = "Default";
-        gtk-theme = "Adwaita-dark";
+        gtk-theme = gtk-theme;
         gtk-timeout-initial = mkUint32 200;
         gtk-timeout-repeat = mkUint32 20;
-        icon-theme = "MacTahoe-dark";
+        icon-theme = icon-theme;
         monospace-font-name = "JetBrainsMono Nerd Font 11";
         scaling-factor = mkUint32 0;
         text-scaling-factor = 1.0;
@@ -83,7 +87,7 @@ in
         left-handed = false;
         middle-click-emulation = false;
         natural-scroll = false;
-        speed = 0.0;
+        speed = mouse-speed;
       };
 
       "org/gnome/desktop/peripherals/touchpad" = {

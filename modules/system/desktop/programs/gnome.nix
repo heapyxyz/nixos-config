@@ -1,6 +1,10 @@
 {
   pkgs,
   lib,
+  cursor-theme,
+  gtk-theme,
+  icon-theme,
+  mouse-speed,
   ...
 }:
 
@@ -20,9 +24,14 @@
       settings = {
         "org/gnome/desktop/interface" = {
           color-scheme = "prefer-dark";
-          cursor-theme = "macOS";
-          gtk-theme = "Adwaita-dark";
-          icon-theme = "MacTahoe-dark";
+          cursor-theme = cursor-theme;
+          gtk-theme = gtk-theme;
+          icon-theme = icon-theme;
+        };
+
+        "org/gnome/desktop/peripherals/mouse" = {
+          accel-profile = "flat";
+          speed = mouse-speed;
         };
       };
     }
