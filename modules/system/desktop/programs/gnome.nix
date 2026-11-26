@@ -39,10 +39,12 @@
 
   environment.systemPackages = with pkgs; [
     decibels # audio player
+    gnome-calculator
+    gnome-text-editor
     loupe # image viewer
     nautilus # files app
     showtime # video player
-    gnome-text-editor # text editor
+    video-trimmer
 
     # utilities
     gnome-disk-utility
